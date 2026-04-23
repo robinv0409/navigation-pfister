@@ -62,12 +62,24 @@ button { font-family: inherit; }
 }
 .nav-open .backdrop { opacity: 1; }
 .overlay {
-  position: fixed; top: 0; right: 0; bottom: 0;
-  width: min(340px, 100vw); background: #1a1a1a; color: #fff;
+  position: fixed; top: 0; right: 0; bottom: 0; left: 0;
+  width: 100vw; background: #1a1a1a; color: #fff;
   z-index: 120; transform: translateX(100%); transition: transform .3s ease;
   display: flex; flex-direction: column;
   overflow: hidden;
 }
+.overlay-topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 16px; border-bottom: 1px solid #2e2e2e;
+  flex: 0 0 auto;
+}
+.overlay-topbar .logo-text { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -.5px; }
+.overlay-close {
+  background: transparent; border: 0; color: #fff;
+  padding: 8px; cursor: pointer; display: flex;
+  align-items: center; justify-content: center;
+}
+.overlay-close svg { width: 24px; height: 24px; }
 .nav-open .overlay { transform: translateX(0); }
 .overlay-panels {
   position: relative; flex: 1; overflow: hidden;
@@ -247,6 +259,60 @@ p { margin: 0 0 12px; }
   background: var(--grey-light); padding: 32px 16px; margin-top: 32px;
   font-size: 13px; color: var(--grey-muted); text-align: center;
 }
+
+/* --------- Filter / Upload (Betten-Seite) --------- */
+.filter-toolbar {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  padding: 16px; background: var(--grey-light);
+  border-bottom: 1px solid var(--grey-mid);
+}
+.upload-btn, .demo-btn, .reset-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 14px; border: 1px solid var(--grey-mid);
+  background: #fff; color: var(--text); font-size: 14px;
+  border-radius: 4px; cursor: pointer; font-family: inherit;
+}
+.upload-btn { background: var(--text); color: #fff; border-color: var(--text); }
+.upload-btn:hover { background: #000; }
+.demo-btn:hover, .reset-btn:hover { background: var(--grey-mid); }
+.reset-btn { color: var(--red); border-color: var(--red); }
+
+.upload-hint {
+  padding: 12px 16px; font-size: 13px; color: var(--grey-muted);
+  border-bottom: 1px solid var(--grey-mid);
+}
+.upload-hint a { color: var(--red); text-decoration: underline; }
+
+.result-count {
+  padding: 14px 16px 6px; font-size: 14px; font-weight: 600;
+}
+
+.filter-panel {
+  padding: 8px 16px 16px; border-bottom: 1px solid var(--grey-mid);
+  background: #fff;
+}
+.filter-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin: 4px 0 12px;
+}
+.filter-head h2 { margin: 0; font-size: 16px; }
+.filter-clear {
+  font-size: 13px; color: var(--red); cursor: pointer; text-decoration: underline;
+}
+.filter-group { margin-bottom: 14px; }
+.filter-label { font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--text); }
+.filter-panel .filter-pills {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  padding: 0; margin: 0; overflow: visible;
+}
+.filter-panel .pill {
+  font-size: 12px; padding: 6px 12px;
+}
+.filter-panel .pill.active {
+  background: var(--red); color: #fff; border-color: var(--red);
+}
+
+#dynamic-grid { padding: 16px; }
 
 /* --------- Responsive (Tablet+) --------- */
 @media (min-width: 768px) {
