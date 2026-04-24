@@ -25,7 +25,7 @@
 
   /* -------------------- Init -------------------- */
 
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', async () => {
     const container = document.getElementById('filter-app');
     if (!container) return;
     renderShell(container);
@@ -33,10 +33,25 @@
     const restored = loadFromStorage();
     if (restored) {
       setData(restored);
+      return;
+    }
+    /* Kein lokaler Upload: versuche die Repo-committed data/produkte.json
+       zu laden. Wenn leer / nicht vorhanden: Empty-State. */
+    const auto = await loadAutoData();
+    if (auto && auto.length) {
+      setData(auto, /* silent */ true);
     } else {
       renderEmpty();
     }
   });
+
+  async function loadAutoData() {
+    try {
+      const res = await fetch('../../../data/produkte.json', { cache: 'no-store' });
+      if (!res.ok) return null;
+      return await res.json();
+    } catch (e) { return null; }
+  }
 
   /* -------------------- UI-Gerüst -------------------- */
 
@@ -172,14 +187,16 @@
 
   /* -------------------- State + Persistenz -------------------- */
 
-  function setData(data) {
+  function setData(data, silent) {
     DATA = data;
     COLUMNS = collectColumns(DATA);
     FILTERS = {};
-    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (e) {}
+    if (!silent) {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (e) {}
+    }
     renderFilters();
     applyFilters();
-    document.getElementById('reset-btn').hidden = false;
+    document.getElementById('reset-btn').hidden = silent ? true : false;
     document.getElementById('upload-hint').hidden = true;
     document.getElementById('filter-panel').hidden = false;
     document.getElementById('result-count').hidden = false;

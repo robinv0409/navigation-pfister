@@ -25,18 +25,24 @@
   <url><loc>https://robinv0409.github.io/navigation-pfister/de/raeume/entree-diele/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://robinv0409.github.io/navigation-pfister/de/marken/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://robinv0409.github.io/navigation-pfister/de/angebote/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/designmoebel/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/doppelbetten/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/doppelbett-mit-stauraum/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/doppelbetten/doppelbett-mit-stauraum/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
   <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/einzelbetten/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/einzelbett-mit-stauraum/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/einzelbetten/einzelbett-mit-stauraum/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
   <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/gaestebetten-tagesbetten/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/klappbetten/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/klappbetten/klappbett-90x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/klappbetten/klappbett-120x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/klappbetten/klappbett-140x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/klappbetten/klappbett-160x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/gaestebetten-tagesbetten/klappbetten/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/gaestebetten-tagesbetten/klappbett-90x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/gaestebetten-tagesbetten/klappbett-120x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/gaestebetten-tagesbetten/klappbett-140x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/gaestebetten-tagesbetten/klappbett-160x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/gaestebetten-tagesbetten/ausziehbetten/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/gaestebetten-tagesbetten/ausziehbett-90x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/gaestebetten-tagesbetten/ausziehbett-120x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/gaestebetten-tagesbetten/ausziehbett-140x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/gaestebetten-tagesbetten/ausziehbett-160x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
   <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/futonbetten/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
   <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/futonbetten/futonbett-90x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
   <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/futonbetten/futonbett-120x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
@@ -92,40 +98,34 @@
   <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett-mit-stauraum/bett-mit-stauraum-140x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
   <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett-mit-stauraum/bett-mit-stauraum-160x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
   <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett-mit-stauraum/bett-mit-stauraum-180x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett-mit-schubladen/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett-mit-bettkasten/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett/bett-90x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett/bett-120x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett/bett-140x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett/bett-160x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett/bett-180x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett/bett-200x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett/hasena-bett/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett/bett-mit-kopfteil/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett/weisses-bett/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett/bett-beige/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett/bett-gelb/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett/bett-pink/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett/bett-rot/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett/bett-grau/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett/bett-schwarz/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett/bett-rosa/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett/bett-braun/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett/rattanbett/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett/lederbett/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/ausziehbetten/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/ausziehbetten/ausziehbett-90x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/ausziehbetten/ausziehbett-120x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/ausziehbetten/ausziehbett-140x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/ausziehbetten/ausziehbett-160x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/metallbett/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/metallbett/metallbett-90x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/metallbett/metallbett-120x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/metallbett/metallbett-140x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/metallbett/metallbett-160x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/metallbett/metallbett-180x200/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett-mit-stauraum/bett-mit-schubladen/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett-mit-stauraum/bett-mit-bettkasten/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
   <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/holzbett/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett-90x200/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett-120x200/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett-140x200/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett-160x200/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett-180x200/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett-200x200/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/hasena-bett/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett-mit-kopfteil/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/weisses-bett/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett-beige/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett-gelb/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett-pink/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett-rot/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett-grau/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett-schwarz/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett-rosa/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/bett-braun/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/rattanbett/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/lederbett/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/metallbett/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/metallbett-90x200/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/metallbett-120x200/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/metallbett-140x200/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/metallbett-160x200/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/betten/metallbett-180x200/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
   <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/matratzen/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/schlafzimmer-textilien/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://robinv0409.github.io/navigation-pfister/de/produkte/betten-matratzen/lattenroste/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>

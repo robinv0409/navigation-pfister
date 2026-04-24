@@ -260,6 +260,66 @@ p { margin: 0 0 12px; }
   font-size: 13px; color: var(--grey-muted); text-align: center;
 }
 
+/* --------- Burger: Thumbnail vor Top-Level-Label --------- */
+.nav-thumb {
+  width: 40px; height: 40px; object-fit: cover;
+  margin-right: 12px; flex: 0 0 40px;
+  background: #2e2e2e;
+}
+.panel-item { gap: 0; }
+.panel-item .nav-thumb + span { flex: 1; }
+
+/* --------- Subcategory Filter-Panel (Pills, fester Reihenfolge) --------- */
+.subcat-filter-panel {
+  padding: 12px 16px 16px; border-bottom: 1px solid var(--grey-mid);
+  background: #fff;
+}
+.subcat-filter-panel .filter-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin: 4px 0 12px;
+}
+.subcat-filter-panel .filter-head h2 { margin: 0; font-size: 16px; }
+.subcat-filter-panel .filter-clear {
+  font-size: 13px; color: var(--red); cursor: pointer;
+  text-decoration: underline; background: none; border: 0; padding: 0;
+}
+.subcat-filter-panel .filter-group { margin-bottom: 12px; }
+.subcat-filter-panel .filter-label {
+  font-size: 13px; font-weight: 600; margin-bottom: 6px;
+}
+.subcat-filter-panel .filter-pills {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  padding: 0; margin: 0; overflow: visible;
+}
+.subcat-filter-panel .pill {
+  font-size: 12px; padding: 6px 12px;
+}
+.subcat-filter-panel .pill.active {
+  background: var(--red); color: #fff; border-color: var(--red);
+}
+
+/* --------- Indexed-Links: SEO-Text-Liste am Seitenende --------- */
+.indexed-links {
+  padding: 28px 16px; background: var(--grey-light);
+  margin-top: 16px;
+}
+.indexed-links h2 {
+  font-size: 15px; font-weight: 600; color: var(--grey-muted);
+  margin: 0 0 12px; text-transform: uppercase; letter-spacing: .5px;
+}
+.indexed-links-wrap {
+  display: flex; flex-wrap: wrap; gap: 8px 18px;
+}
+.indexed-link {
+  font-size: 14px; color: var(--grey-muted);
+  text-decoration: underline; text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color .15s ease, text-decoration-thickness .15s ease;
+}
+.indexed-link:hover {
+  color: var(--red); text-decoration-thickness: 2px;
+}
+
 /* --------- Utility: visuell versteckt, aber fokussierbar --------- */
 .visually-hidden {
   position: absolute; width: 1px; height: 1px;

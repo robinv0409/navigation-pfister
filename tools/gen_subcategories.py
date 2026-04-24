@@ -31,14 +31,49 @@ EINZEL_SIZES = ['90x200', '120x200']
 # filterSpec-Werte koennen String oder Liste sein (Liste => "in" Match).
 
 def size_filter(typ_label, sizes):
-    """Liste von Level-6 Knoten fuer typische 'X YxZ' SEO-Filter."""
+    """Liste von Level-6 Knoten fuer typische 'X YxZ' SEO-Filter.
+    Jeder wird als indexedFilter markiert (erscheint nicht im Burger/auf Kacheln,
+    sondern nur als Text-Link am Seitenende des Elternknotens).
+    """
     return {
         f'{typ_label.lower().replace(" ", "-")}-{s}': {
             'label': f'{typ_label} {s}',
-            'filterSpec': {'Typ': typ_label, 'Grösse': s}
+            'filterSpec': {'Typ': typ_label, 'Grösse': s},
+            'indexedFilter': True,
+            'children': {},
         }
         for s in sizes
     }
+
+def ifl(label, spec):
+    """Indexed-filter helper — Filter-Eintrag ohne Kachel, nur als Text-Link."""
+    return {'label': label, 'filterSpec': spec, 'indexedFilter': True, 'children': {}}
+
+# Alle ehemaligen 'bett'-Level-5-Filter ziehen um DIREKT unter 'betten/'
+EX_BETT_FILTERS = {
+    **{f'bett-{s}': ifl(f'Bett {s}', {'Kategorie': 'Bett', 'Grösse': s})
+       for s in ['90x200', '120x200', '140x200', '160x200', '180x200', '200x200']},
+    'hasena-bett':       ifl('Hasena Bett',       {'Kategorie': 'Bett', 'Marke': 'Hasena'}),
+    'bett-mit-kopfteil': ifl('Bett mit Kopfteil', {'Kategorie': 'Bett'}),
+    'weisses-bett':      ifl('Weisses Bett',      {'Kategorie': 'Bett', 'Farbe': 'weiss'}),
+    'bett-beige':        ifl('Bett beige',        {'Kategorie': 'Bett', 'Farbe': 'beige'}),
+    'bett-gelb':         ifl('Bett gelb',         {'Kategorie': 'Bett', 'Farbe': 'gelb'}),
+    'bett-pink':         ifl('Bett pink',         {'Kategorie': 'Bett', 'Farbe': 'rosa'}),
+    'bett-rot':          ifl('Bett rot',          {'Kategorie': 'Bett', 'Farbe': 'rot'}),
+    'bett-grau':         ifl('Bett grau',         {'Kategorie': 'Bett', 'Farbe': 'grau'}),
+    'bett-schwarz':      ifl('Bett schwarz',      {'Kategorie': 'Bett', 'Farbe': 'schwarz'}),
+    'bett-rosa':         ifl('Bett rosa',         {'Kategorie': 'Bett', 'Farbe': 'rosa'}),
+    'bett-braun':        ifl('Bett braun',        {'Kategorie': 'Bett', 'Farbe': 'braun'}),
+    'rattanbett':        ifl('Rattanbett',        {'Kategorie': 'Bett', 'Material': 'Rattan'}),
+    'lederbett':         ifl('Lederbett',         {'Kategorie': 'Bett', 'Material': 'Leder'}),
+}
+
+# Ex-Metallbett-Kategorie wird Filter direkt unter betten/
+EX_METALLBETT_FILTERS = {
+    'metallbett': ifl('Metallbett', {'Typ': 'Metallbett'}),
+    **{f'metallbett-{s}': ifl(f'Metallbett {s}', {'Typ': 'Metallbett', 'Grösse': s})
+       for s in ['90x200', '120x200', '140x200', '160x200', '180x200']},
+}
 
 HIERARCHY = {
     # --- Level 4 ---
@@ -46,35 +81,35 @@ HIERARCHY = {
         'label': 'Betten',
         'filterSpec': {'Kategorie': 'Bett'},
         'children': {
+            # --- Level-5 Kategorien (erscheinen als Kacheln + im Burger) ---
             'doppelbetten': {
                 'label': 'Doppelbetten',
                 'filterSpec': {'Kategorie': 'Bett', 'Grösse': DOPPEL_SIZES},
-                'children': {}
-            },
-            'doppelbett-mit-stauraum': {
-                'label': 'Doppelbett mit Stauraum',
-                'filterSpec': {'Kategorie': 'Bett', 'Typ': 'Polsterbett', 'Grösse': DOPPEL_SIZES},
-                'children': {}
+                'children': {
+                    # Ex-Kategorie "Doppelbett mit Stauraum" wird Filter
+                    'doppelbett-mit-stauraum': ifl('Doppelbett mit Stauraum',
+                        {'Kategorie': 'Bett', 'Typ': 'Polsterbett', 'Grösse': DOPPEL_SIZES}),
+                }
             },
             'einzelbetten': {
                 'label': 'Einzelbetten',
                 'filterSpec': {'Kategorie': 'Bett', 'Grösse': EINZEL_SIZES},
-                'children': {}
-            },
-            'einzelbett-mit-stauraum': {
-                'label': 'Einzelbett mit Stauraum',
-                'filterSpec': {'Kategorie': 'Bett', 'Typ': 'Polsterbett', 'Grösse': EINZEL_SIZES},
-                'children': {}
+                'children': {
+                    'einzelbett-mit-stauraum': ifl('Einzelbett mit Stauraum',
+                        {'Kategorie': 'Bett', 'Typ': 'Polsterbett', 'Grösse': EINZEL_SIZES}),
+                }
             },
             'gaestebetten-tagesbetten': {
                 'label': 'Gästebetten / Tagesbetten',
                 'filterSpec': {'Kategorie': 'Bett', 'Typ': ['Klappbett', 'Ausziehbett', 'Futonbett']},
-                'children': {}
-            },
-            'klappbetten': {
-                'label': 'Klappbetten',
-                'filterSpec': {'Typ': 'Klappbett'},
-                'children': size_filter('Klappbett', ['90x200', '120x200', '140x200', '160x200'])
+                'children': {
+                    # Ex-Kategorie Klappbetten wird Filter (+ ihre 4 Grössen-Filter)
+                    'klappbetten': ifl('Klappbetten', {'Typ': 'Klappbett'}),
+                    **size_filter('Klappbett', ['90x200', '120x200', '140x200', '160x200']),
+                    # Ex-Kategorie Ausziehbetten wird Filter (+ ihre 4 Grössen-Filter)
+                    'ausziehbetten': ifl('Ausziehbetten', {'Typ': 'Ausziehbett'}),
+                    **size_filter('Ausziehbett', ['90x200', '120x200', '140x200', '160x200']),
+                }
             },
             'futonbetten': {
                 'label': 'Futonbetten',
@@ -86,17 +121,17 @@ HIERARCHY = {
                 'filterSpec': {'Typ': 'Boxspringbett'},
                 'children': {
                     **size_filter('Boxspringbett', ['90x200', '120x200', '140x200', '160x200', '180x200', '200x200', '240x200']),
-                    'hasena-boxspringbett':       {'label': 'Hasena Boxspringbett',   'filterSpec': {'Typ': 'Boxspringbett', 'Marke': 'Hasena'}},
-                    'jensen-boxspringbett':       {'label': 'Jensen Boxspringbett',   'filterSpec': {'Typ': 'Boxspringbett', 'Marke': 'Jensen'}},
-                    'riposa-boxspringbett':       {'label': 'Riposa Boxspringbett',   'filterSpec': {'Typ': 'Boxspringbett', 'Marke': 'Riposa'}},
-                    'weisses-boxspringbett':      {'label': 'Weisses Boxspringbett',  'filterSpec': {'Typ': 'Boxspringbett', 'Farbe': 'weiss'}},
-                    'graues-boxspringbett':       {'label': 'Graues Boxspringbett',   'filterSpec': {'Typ': 'Boxspringbett', 'Farbe': 'grau'}},
-                    'boxspringbett-mit-nachttisch': {'label': 'Boxspringbett mit Nachttisch', 'filterSpec': {'Typ': 'Boxspringbett'}},
-                    'boxspringbett-mit-stauraum':   {'label': 'Boxspringbett mit Stauraum',   'filterSpec': {'Typ': 'Boxspringbett'}},
-                    'boxspringbett-elektrisch':     {'label': 'Boxspringbett elektrisch',     'filterSpec': {'Typ': 'Boxspringbett'}},
-                    'boxspringbett-superba':        {'label': 'Boxspringbett Superba',        'filterSpec': {'Typ': 'Boxspringbett'}},
-                    'boxspringbett-mit-bettkasten': {'label': 'Boxspringbett mit Bettkasten', 'filterSpec': {'Typ': 'Boxspringbett'}},
-                    'boxspringbett-mit-schublade':  {'label': 'Boxspringbett mit Schublade',  'filterSpec': {'Typ': 'Boxspringbett'}},
+                    'hasena-boxspringbett':         ifl('Hasena Boxspringbett',   {'Typ': 'Boxspringbett', 'Marke': 'Hasena'}),
+                    'jensen-boxspringbett':         ifl('Jensen Boxspringbett',   {'Typ': 'Boxspringbett', 'Marke': 'Jensen'}),
+                    'riposa-boxspringbett':         ifl('Riposa Boxspringbett',   {'Typ': 'Boxspringbett', 'Marke': 'Riposa'}),
+                    'weisses-boxspringbett':        ifl('Weisses Boxspringbett',  {'Typ': 'Boxspringbett', 'Farbe': 'weiss'}),
+                    'graues-boxspringbett':         ifl('Graues Boxspringbett',   {'Typ': 'Boxspringbett', 'Farbe': 'grau'}),
+                    'boxspringbett-mit-nachttisch': ifl('Boxspringbett mit Nachttisch', {'Typ': 'Boxspringbett'}),
+                    'boxspringbett-mit-stauraum':   ifl('Boxspringbett mit Stauraum',   {'Typ': 'Boxspringbett'}),
+                    'boxspringbett-elektrisch':     ifl('Boxspringbett elektrisch',     {'Typ': 'Boxspringbett'}),
+                    'boxspringbett-superba':        ifl('Boxspringbett Superba',        {'Typ': 'Boxspringbett'}),
+                    'boxspringbett-mit-bettkasten': ifl('Boxspringbett mit Bettkasten', {'Typ': 'Boxspringbett'}),
+                    'boxspringbett-mit-schublade':  ifl('Boxspringbett mit Schublade',  {'Typ': 'Boxspringbett'}),
                 }
             },
             'himmelbetten': {
@@ -104,7 +139,8 @@ HIERARCHY = {
                 'filterSpec': {'Typ': 'Himmelbett'},
                 'children': {
                     **size_filter('Himmelbett', ['140x200', '160x200', '180x200']),
-                    'himmelbett-aus-holz': {'label': 'Himmelbett aus Holz', 'filterSpec': {'Typ': 'Himmelbett', 'Material': ['Eiche massiv', 'Buche']}},
+                    'himmelbett-aus-holz': ifl('Himmelbett aus Holz',
+                        {'Typ': 'Himmelbett', 'Material': ['Eiche massiv', 'Buche']}),
                 }
             },
             'polsterbetten': {
@@ -112,21 +148,21 @@ HIERARCHY = {
                 'filterSpec': {'Typ': 'Polsterbett'},
                 'children': {
                     **size_filter('Polsterbett', ['90x200', '120x200', '140x200', '160x200', '180x200', '200x200']),
-                    'polsterbett-bettkasten':     {'label': 'Polsterbett Bettkasten',     'filterSpec': {'Typ': 'Polsterbett'}},
-                    'polsterbett-mit-stauraum':   {'label': 'Polsterbett mit Stauraum',   'filterSpec': {'Typ': 'Polsterbett'}},
-                    'polsterbett-beige':          {'label': 'Polsterbett beige',          'filterSpec': {'Typ': 'Polsterbett', 'Farbe': 'beige'}},
-                    'polsterbett-weiss':          {'label': 'Polsterbett weiss',          'filterSpec': {'Typ': 'Polsterbett', 'Farbe': 'weiss'}},
-                    'polsterbett-schwarz':        {'label': 'Polsterbett schwarz',        'filterSpec': {'Typ': 'Polsterbett', 'Farbe': 'schwarz'}},
-                    'polsterbett-grau':           {'label': 'Polsterbett grau',           'filterSpec': {'Typ': 'Polsterbett', 'Farbe': 'grau'}},
-                    'esposa-polsterbett':         {'label': 'Esposa Polsterbett',         'filterSpec': {'Typ': 'Polsterbett', 'Marke': 'Esposa'}},
-                    'hasena-polsterbett':         {'label': 'Hasena Polsterbett',         'filterSpec': {'Typ': 'Polsterbett', 'Marke': 'Hasena'}},
+                    'polsterbett-bettkasten':   ifl('Polsterbett Bettkasten',     {'Typ': 'Polsterbett'}),
+                    'polsterbett-mit-stauraum': ifl('Polsterbett mit Stauraum',   {'Typ': 'Polsterbett'}),
+                    'polsterbett-beige':        ifl('Polsterbett beige',          {'Typ': 'Polsterbett', 'Farbe': 'beige'}),
+                    'polsterbett-weiss':        ifl('Polsterbett weiss',          {'Typ': 'Polsterbett', 'Farbe': 'weiss'}),
+                    'polsterbett-schwarz':      ifl('Polsterbett schwarz',        {'Typ': 'Polsterbett', 'Farbe': 'schwarz'}),
+                    'polsterbett-grau':         ifl('Polsterbett grau',           {'Typ': 'Polsterbett', 'Farbe': 'grau'}),
+                    'esposa-polsterbett':       ifl('Esposa Polsterbett',         {'Typ': 'Polsterbett', 'Marke': 'Esposa'}),
+                    'hasena-polsterbett':       ifl('Hasena Polsterbett',         {'Typ': 'Polsterbett', 'Marke': 'Hasena'}),
                 }
             },
             'bettanlagen': {
                 'label': 'Bettanlagen',
                 'filterSpec': {'Kategorie': 'Bett'},
                 'children': {
-                    f'bettanlage-{s}': {'label': f'Bettanlage {s}', 'filterSpec': {'Kategorie': 'Bett', 'Grösse': s}}
+                    f'bettanlage-{s}': ifl(f'Bettanlage {s}', {'Kategorie': 'Bett', 'Grösse': s})
                     for s in ['140x200', '160x200', '180x200', '200x200']
                 }
             },
@@ -134,56 +170,26 @@ HIERARCHY = {
                 'label': 'Bett mit Stauraum',
                 'filterSpec': {'Kategorie': 'Bett', 'Typ': 'Polsterbett'},
                 'children': {
-                    f'bett-mit-stauraum-{s}': {'label': f'Bett mit Stauraum {s}', 'filterSpec': {'Kategorie': 'Bett', 'Typ': 'Polsterbett', 'Grösse': s}}
-                    for s in ['90x200', '140x200', '160x200', '180x200']
+                    **{f'bett-mit-stauraum-{s}': ifl(f'Bett mit Stauraum {s}',
+                        {'Kategorie': 'Bett', 'Typ': 'Polsterbett', 'Grösse': s})
+                       for s in ['90x200', '140x200', '160x200', '180x200']},
+                    # Ex-Kategorien "Bett mit Schubladen" + "Bett mit Bettkasten" werden Filter
+                    'bett-mit-schubladen': ifl('Bett mit Schubladen',
+                        {'Kategorie': 'Bett', 'Typ': 'Polsterbett'}),
+                    'bett-mit-bettkasten': ifl('Bett mit Bettkasten',
+                        {'Kategorie': 'Bett', 'Typ': 'Polsterbett'}),
                 }
-            },
-            'bett-mit-schubladen': {
-                'label': 'Bett mit Schubladen',
-                'filterSpec': {'Kategorie': 'Bett', 'Typ': 'Polsterbett'},
-                'children': {}
-            },
-            'bett-mit-bettkasten': {
-                'label': 'Bett mit Bettkasten',
-                'filterSpec': {'Kategorie': 'Bett', 'Typ': 'Polsterbett'},
-                'children': {}
-            },
-            'bett': {
-                'label': 'Bett',
-                'filterSpec': {'Kategorie': 'Bett'},
-                'children': {
-                    **{f'bett-{s}': {'label': f'Bett {s}', 'filterSpec': {'Kategorie': 'Bett', 'Grösse': s}}
-                       for s in ['90x200', '120x200', '140x200', '160x200', '180x200', '200x200']},
-                    'hasena-bett':      {'label': 'Hasena Bett',      'filterSpec': {'Kategorie': 'Bett', 'Marke': 'Hasena'}},
-                    'bett-mit-kopfteil':{'label': 'Bett mit Kopfteil','filterSpec': {'Kategorie': 'Bett'}},
-                    'weisses-bett':     {'label': 'Weisses Bett',     'filterSpec': {'Kategorie': 'Bett', 'Farbe': 'weiss'}},
-                    'bett-beige':       {'label': 'Bett beige',       'filterSpec': {'Kategorie': 'Bett', 'Farbe': 'beige'}},
-                    'bett-gelb':        {'label': 'Bett gelb',        'filterSpec': {'Kategorie': 'Bett', 'Farbe': 'gelb'}},
-                    'bett-pink':        {'label': 'Bett pink',        'filterSpec': {'Kategorie': 'Bett', 'Farbe': 'rosa'}},
-                    'bett-rot':         {'label': 'Bett rot',         'filterSpec': {'Kategorie': 'Bett', 'Farbe': 'rot'}},
-                    'bett-grau':        {'label': 'Bett grau',        'filterSpec': {'Kategorie': 'Bett', 'Farbe': 'grau'}},
-                    'bett-schwarz':     {'label': 'Bett schwarz',     'filterSpec': {'Kategorie': 'Bett', 'Farbe': 'schwarz'}},
-                    'bett-rosa':        {'label': 'Bett rosa',        'filterSpec': {'Kategorie': 'Bett', 'Farbe': 'rosa'}},
-                    'bett-braun':       {'label': 'Bett braun',       'filterSpec': {'Kategorie': 'Bett', 'Farbe': 'braun'}},
-                    'rattanbett':       {'label': 'Rattanbett',       'filterSpec': {'Kategorie': 'Bett', 'Material': 'Rattan'}},
-                    'lederbett':        {'label': 'Lederbett',        'filterSpec': {'Kategorie': 'Bett', 'Material': 'Leder'}},
-                }
-            },
-            'ausziehbetten': {
-                'label': 'Ausziehbetten',
-                'filterSpec': {'Typ': 'Ausziehbett'},
-                'children': size_filter('Ausziehbett', ['90x200', '120x200', '140x200', '160x200'])
-            },
-            'metallbett': {
-                'label': 'Metallbett',
-                'filterSpec': {'Typ': 'Metallbett'},
-                'children': size_filter('Metallbett', ['90x200', '120x200', '140x200', '160x200', '180x200'])
             },
             'holzbett': {
                 'label': 'Holzbett',
                 'filterSpec': {'Typ': ['Holzbett', 'Massivholzbett']},
                 'children': {}
             },
+
+            # --- Level-5 indexierte Filter direkt unter betten/
+            # (Ex-Kategorie "bett" aufgeloest, Ex-Kategorie "metallbett" aufgeloest) ---
+            **EX_BETT_FILTERS,
+            **EX_METALLBETT_FILTERS,
         }
     },
     'matratzen': {'label': 'Matratzen', 'filterSpec': {'Kategorie': 'Matratze'}, 'children': {}},
@@ -274,10 +280,10 @@ def generate_html(chain, node):
     hreflang_de = 'de/produkte/betten-matratzen/' + '/'.join(chain) + '/'
 
     # Kacheln fuer Unterkategorien:
-    # Nur auf Level-4-Seiten (direkt unter betten-matratzen). Level-5-Seiten
-    # wie "Boxspringbetten" zeigen KEINE Kacheln fuer ihre indexierten
-    # Filter-URLs — diese sind nur via Burger-Menue und interne Links
-    # erreichbar (SEO). Auf Produkt-Ebenen lenken Kacheln vom Produkt-Grid ab.
+    # Nur auf Level-4-Seiten (direkt unter betten-matratzen). JS rendert die
+    # Kacheln aus NAV_DATA und ueberspringt Knoten mit indexedFilter: true.
+    # Level-5-Seiten zeigen KEINE Kacheln — dort erscheinen die indexierten
+    # Filter-URLs stattdessen als Text-Links am Seitenende (s.u.).
     tiles_section = ''
     if has_children and len(chain) == 1:
         tiles_section = f'''
@@ -285,6 +291,28 @@ def generate_html(chain, node):
       <h2>Kategorien</h2>
       <div class="tile-grid" data-render-grid="{current_slug}"></div>
     </section>
+'''
+
+    # Indexed-Links am Seitenende (statisch, SEO-freundlich):
+    # Alle Kinder mit indexedFilter: true werden als unterstrichene Text-Links
+    # gelistet — sie erscheinen NICHT im Burger/als Kachel, sondern nur hier.
+    indexed_links_section = ''
+    indexed_children = [
+        (slug, child) for slug, child in node.get('children', {}).items()
+        if child.get('indexedFilter')
+    ]
+    if indexed_children:
+        links_html = '\n'.join(
+            f'        <a class="indexed-link" href="{s}/">{esc(c["label"])}</a>'
+            for s, c in indexed_children
+        )
+        indexed_links_section = f'''
+    <nav class="indexed-links" aria-label="Verwandte Suchen">
+      <h2>Verwandte Suchen</h2>
+      <div class="indexed-links-wrap">
+{links_html}
+      </div>
+    </nav>
 '''
 
     html = f"""<!DOCTYPE html>
@@ -332,7 +360,7 @@ def generate_html(chain, node):
       <h2>Produkte</h2>
       <div id="subcat-app" data-upload-path="{upload_path}"></div>
     </section>
-  </main>
+{indexed_links_section}  </main>
 
   <footer class="site-footer">© Pfister – Prototyp · Alle Preise in CHF</footer>
   <script src="{up}js/main.js"></script>
@@ -376,9 +404,25 @@ def build_nav_array(tree, chain=()):
         ]
         if filter_spec:
             parts.append('filterSpec: ' + json.dumps(filter_spec, ensure_ascii=False))
+        if node.get('indexedFilter'):
+            parts.append('indexedFilter: true')
         parts.append('children: ' + child_js)
         items.append('{ ' + ', '.join(parts) + ' }')
     return '[\n          ' + ',\n          '.join(items) + '\n        ]' if items else '[]'
+
+
+def clean_old_tree():
+    """Entferne das komplette betten-matratzen-Unterverzeichnis
+    (ausser index.html der Hauptseite selbst), bevor neu geschrieben wird.
+    Vermeidet Waisen-HTMLs von entfernten Kategorien wie /bett/, /metallbett/, ..."""
+    import shutil
+    base = ROOT / BM_ROOT
+    if not base.exists():
+        return
+    for child in base.iterdir():
+        if child.is_dir():
+            shutil.rmtree(child)
+    print(f'cleaned old subcategory tree under {BM_ROOT}')
 
 
 # -----------------------------------------------------------------------
@@ -431,6 +475,7 @@ SITEMAP_BASE = """<?xml version="1.0" encoding="UTF-8"?>
   <url><loc>{S}de/raeume/entree-diele/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>{S}de/marken/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>{S}de/angebote/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>{S}de/designmoebel/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 """.replace('{S}', SITE)
 
 def write_sitemap(new_chains):
@@ -452,6 +497,7 @@ def write_sitemap(new_chains):
 
 def main():
     assert_unique_slugs()
+    clean_old_tree()
     count = 0
     new_chains = []
     for chain, node in walk(HIERARCHY):
