@@ -25,7 +25,127 @@ const NAV_DATA = {
       { label: 'Betten & Matratzen', url: 'de/produkte/betten-matratzen/', slug: 'betten-matratzen',
         image: 'images/cat-betten-matratzen.jpg',
         related: ['schlafzimmer', 'textilien'],
-        children: [] /* Platzhalter: z.B. Gästebetten, Boxspringbetten — erweitern hier */ },
+        /* BETTEN_MATRATZEN_CHILDREN:START */
+        children: [
+          { label: "Betten", url: "de/produkte/betten-matratzen/betten/", slug: "betten", filterSpec: {"Kategorie": "Bett"}, children: [
+          { label: "Doppelbetten", url: "de/produkte/betten-matratzen/betten/doppelbetten/", slug: "doppelbetten", filterSpec: {"Kategorie": "Bett", "Grösse": ["140x200", "160x200", "180x200", "200x200"]}, children: [] },
+          { label: "Doppelbett mit Stauraum", url: "de/produkte/betten-matratzen/betten/doppelbett-mit-stauraum/", slug: "doppelbett-mit-stauraum", filterSpec: {"Kategorie": "Bett", "Typ": "Polsterbett", "Grösse": ["140x200", "160x200", "180x200", "200x200"]}, children: [] },
+          { label: "Einzelbetten", url: "de/produkte/betten-matratzen/betten/einzelbetten/", slug: "einzelbetten", filterSpec: {"Kategorie": "Bett", "Grösse": ["90x200", "120x200"]}, children: [] },
+          { label: "Einzelbett mit Stauraum", url: "de/produkte/betten-matratzen/betten/einzelbett-mit-stauraum/", slug: "einzelbett-mit-stauraum", filterSpec: {"Kategorie": "Bett", "Typ": "Polsterbett", "Grösse": ["90x200", "120x200"]}, children: [] },
+          { label: "Gästebetten / Tagesbetten", url: "de/produkte/betten-matratzen/betten/gaestebetten-tagesbetten/", slug: "gaestebetten-tagesbetten", filterSpec: {"Kategorie": "Bett", "Typ": ["Klappbett", "Ausziehbett", "Futonbett"]}, children: [] },
+          { label: "Klappbetten", url: "de/produkte/betten-matratzen/betten/klappbetten/", slug: "klappbetten", filterSpec: {"Typ": "Klappbett"}, children: [
+          { label: "Klappbett 90x200", url: "de/produkte/betten-matratzen/betten/klappbetten/klappbett-90x200/", slug: "klappbett-90x200", filterSpec: {"Typ": "Klappbett", "Grösse": "90x200"}, children: [] },
+          { label: "Klappbett 120x200", url: "de/produkte/betten-matratzen/betten/klappbetten/klappbett-120x200/", slug: "klappbett-120x200", filterSpec: {"Typ": "Klappbett", "Grösse": "120x200"}, children: [] },
+          { label: "Klappbett 140x200", url: "de/produkte/betten-matratzen/betten/klappbetten/klappbett-140x200/", slug: "klappbett-140x200", filterSpec: {"Typ": "Klappbett", "Grösse": "140x200"}, children: [] },
+          { label: "Klappbett 160x200", url: "de/produkte/betten-matratzen/betten/klappbetten/klappbett-160x200/", slug: "klappbett-160x200", filterSpec: {"Typ": "Klappbett", "Grösse": "160x200"}, children: [] }
+        ] },
+          { label: "Futonbetten", url: "de/produkte/betten-matratzen/betten/futonbetten/", slug: "futonbetten", filterSpec: {"Typ": "Futonbett"}, children: [
+          { label: "Futonbett 90x200", url: "de/produkte/betten-matratzen/betten/futonbetten/futonbett-90x200/", slug: "futonbett-90x200", filterSpec: {"Typ": "Futonbett", "Grösse": "90x200"}, children: [] },
+          { label: "Futonbett 120x200", url: "de/produkte/betten-matratzen/betten/futonbetten/futonbett-120x200/", slug: "futonbett-120x200", filterSpec: {"Typ": "Futonbett", "Grösse": "120x200"}, children: [] },
+          { label: "Futonbett 140x200", url: "de/produkte/betten-matratzen/betten/futonbetten/futonbett-140x200/", slug: "futonbett-140x200", filterSpec: {"Typ": "Futonbett", "Grösse": "140x200"}, children: [] },
+          { label: "Futonbett 160x200", url: "de/produkte/betten-matratzen/betten/futonbetten/futonbett-160x200/", slug: "futonbett-160x200", filterSpec: {"Typ": "Futonbett", "Grösse": "160x200"}, children: [] },
+          { label: "Futonbett 180x200", url: "de/produkte/betten-matratzen/betten/futonbetten/futonbett-180x200/", slug: "futonbett-180x200", filterSpec: {"Typ": "Futonbett", "Grösse": "180x200"}, children: [] }
+        ] },
+          { label: "Boxspringbetten", url: "de/produkte/betten-matratzen/betten/boxspringbetten/", slug: "boxspringbetten", filterSpec: {"Typ": "Boxspringbett"}, children: [
+          { label: "Boxspringbett 90x200", url: "de/produkte/betten-matratzen/betten/boxspringbetten/boxspringbett-90x200/", slug: "boxspringbett-90x200", filterSpec: {"Typ": "Boxspringbett", "Grösse": "90x200"}, children: [] },
+          { label: "Boxspringbett 120x200", url: "de/produkte/betten-matratzen/betten/boxspringbetten/boxspringbett-120x200/", slug: "boxspringbett-120x200", filterSpec: {"Typ": "Boxspringbett", "Grösse": "120x200"}, children: [] },
+          { label: "Boxspringbett 140x200", url: "de/produkte/betten-matratzen/betten/boxspringbetten/boxspringbett-140x200/", slug: "boxspringbett-140x200", filterSpec: {"Typ": "Boxspringbett", "Grösse": "140x200"}, children: [] },
+          { label: "Boxspringbett 160x200", url: "de/produkte/betten-matratzen/betten/boxspringbetten/boxspringbett-160x200/", slug: "boxspringbett-160x200", filterSpec: {"Typ": "Boxspringbett", "Grösse": "160x200"}, children: [] },
+          { label: "Boxspringbett 180x200", url: "de/produkte/betten-matratzen/betten/boxspringbetten/boxspringbett-180x200/", slug: "boxspringbett-180x200", filterSpec: {"Typ": "Boxspringbett", "Grösse": "180x200"}, children: [] },
+          { label: "Boxspringbett 200x200", url: "de/produkte/betten-matratzen/betten/boxspringbetten/boxspringbett-200x200/", slug: "boxspringbett-200x200", filterSpec: {"Typ": "Boxspringbett", "Grösse": "200x200"}, children: [] },
+          { label: "Boxspringbett 240x200", url: "de/produkte/betten-matratzen/betten/boxspringbetten/boxspringbett-240x200/", slug: "boxspringbett-240x200", filterSpec: {"Typ": "Boxspringbett", "Grösse": "240x200"}, children: [] },
+          { label: "Hasena Boxspringbett", url: "de/produkte/betten-matratzen/betten/boxspringbetten/hasena-boxspringbett/", slug: "hasena-boxspringbett", filterSpec: {"Typ": "Boxspringbett", "Marke": "Hasena"}, children: [] },
+          { label: "Jensen Boxspringbett", url: "de/produkte/betten-matratzen/betten/boxspringbetten/jensen-boxspringbett/", slug: "jensen-boxspringbett", filterSpec: {"Typ": "Boxspringbett", "Marke": "Jensen"}, children: [] },
+          { label: "Riposa Boxspringbett", url: "de/produkte/betten-matratzen/betten/boxspringbetten/riposa-boxspringbett/", slug: "riposa-boxspringbett", filterSpec: {"Typ": "Boxspringbett", "Marke": "Riposa"}, children: [] },
+          { label: "Weisses Boxspringbett", url: "de/produkte/betten-matratzen/betten/boxspringbetten/weisses-boxspringbett/", slug: "weisses-boxspringbett", filterSpec: {"Typ": "Boxspringbett", "Farbe": "weiss"}, children: [] },
+          { label: "Graues Boxspringbett", url: "de/produkte/betten-matratzen/betten/boxspringbetten/graues-boxspringbett/", slug: "graues-boxspringbett", filterSpec: {"Typ": "Boxspringbett", "Farbe": "grau"}, children: [] },
+          { label: "Boxspringbett mit Nachttisch", url: "de/produkte/betten-matratzen/betten/boxspringbetten/boxspringbett-mit-nachttisch/", slug: "boxspringbett-mit-nachttisch", filterSpec: {"Typ": "Boxspringbett"}, children: [] },
+          { label: "Boxspringbett mit Stauraum", url: "de/produkte/betten-matratzen/betten/boxspringbetten/boxspringbett-mit-stauraum/", slug: "boxspringbett-mit-stauraum", filterSpec: {"Typ": "Boxspringbett"}, children: [] },
+          { label: "Boxspringbett elektrisch", url: "de/produkte/betten-matratzen/betten/boxspringbetten/boxspringbett-elektrisch/", slug: "boxspringbett-elektrisch", filterSpec: {"Typ": "Boxspringbett"}, children: [] },
+          { label: "Boxspringbett Superba", url: "de/produkte/betten-matratzen/betten/boxspringbetten/boxspringbett-superba/", slug: "boxspringbett-superba", filterSpec: {"Typ": "Boxspringbett"}, children: [] },
+          { label: "Boxspringbett mit Bettkasten", url: "de/produkte/betten-matratzen/betten/boxspringbetten/boxspringbett-mit-bettkasten/", slug: "boxspringbett-mit-bettkasten", filterSpec: {"Typ": "Boxspringbett"}, children: [] },
+          { label: "Boxspringbett mit Schublade", url: "de/produkte/betten-matratzen/betten/boxspringbetten/boxspringbett-mit-schublade/", slug: "boxspringbett-mit-schublade", filterSpec: {"Typ": "Boxspringbett"}, children: [] }
+        ] },
+          { label: "Himmelbetten", url: "de/produkte/betten-matratzen/betten/himmelbetten/", slug: "himmelbetten", filterSpec: {"Typ": "Himmelbett"}, children: [
+          { label: "Himmelbett 140x200", url: "de/produkte/betten-matratzen/betten/himmelbetten/himmelbett-140x200/", slug: "himmelbett-140x200", filterSpec: {"Typ": "Himmelbett", "Grösse": "140x200"}, children: [] },
+          { label: "Himmelbett 160x200", url: "de/produkte/betten-matratzen/betten/himmelbetten/himmelbett-160x200/", slug: "himmelbett-160x200", filterSpec: {"Typ": "Himmelbett", "Grösse": "160x200"}, children: [] },
+          { label: "Himmelbett 180x200", url: "de/produkte/betten-matratzen/betten/himmelbetten/himmelbett-180x200/", slug: "himmelbett-180x200", filterSpec: {"Typ": "Himmelbett", "Grösse": "180x200"}, children: [] },
+          { label: "Himmelbett aus Holz", url: "de/produkte/betten-matratzen/betten/himmelbetten/himmelbett-aus-holz/", slug: "himmelbett-aus-holz", filterSpec: {"Typ": "Himmelbett", "Material": ["Eiche massiv", "Buche"]}, children: [] }
+        ] },
+          { label: "Polsterbetten", url: "de/produkte/betten-matratzen/betten/polsterbetten/", slug: "polsterbetten", filterSpec: {"Typ": "Polsterbett"}, children: [
+          { label: "Polsterbett 90x200", url: "de/produkte/betten-matratzen/betten/polsterbetten/polsterbett-90x200/", slug: "polsterbett-90x200", filterSpec: {"Typ": "Polsterbett", "Grösse": "90x200"}, children: [] },
+          { label: "Polsterbett 120x200", url: "de/produkte/betten-matratzen/betten/polsterbetten/polsterbett-120x200/", slug: "polsterbett-120x200", filterSpec: {"Typ": "Polsterbett", "Grösse": "120x200"}, children: [] },
+          { label: "Polsterbett 140x200", url: "de/produkte/betten-matratzen/betten/polsterbetten/polsterbett-140x200/", slug: "polsterbett-140x200", filterSpec: {"Typ": "Polsterbett", "Grösse": "140x200"}, children: [] },
+          { label: "Polsterbett 160x200", url: "de/produkte/betten-matratzen/betten/polsterbetten/polsterbett-160x200/", slug: "polsterbett-160x200", filterSpec: {"Typ": "Polsterbett", "Grösse": "160x200"}, children: [] },
+          { label: "Polsterbett 180x200", url: "de/produkte/betten-matratzen/betten/polsterbetten/polsterbett-180x200/", slug: "polsterbett-180x200", filterSpec: {"Typ": "Polsterbett", "Grösse": "180x200"}, children: [] },
+          { label: "Polsterbett 200x200", url: "de/produkte/betten-matratzen/betten/polsterbetten/polsterbett-200x200/", slug: "polsterbett-200x200", filterSpec: {"Typ": "Polsterbett", "Grösse": "200x200"}, children: [] },
+          { label: "Polsterbett Bettkasten", url: "de/produkte/betten-matratzen/betten/polsterbetten/polsterbett-bettkasten/", slug: "polsterbett-bettkasten", filterSpec: {"Typ": "Polsterbett"}, children: [] },
+          { label: "Polsterbett mit Stauraum", url: "de/produkte/betten-matratzen/betten/polsterbetten/polsterbett-mit-stauraum/", slug: "polsterbett-mit-stauraum", filterSpec: {"Typ": "Polsterbett"}, children: [] },
+          { label: "Polsterbett beige", url: "de/produkte/betten-matratzen/betten/polsterbetten/polsterbett-beige/", slug: "polsterbett-beige", filterSpec: {"Typ": "Polsterbett", "Farbe": "beige"}, children: [] },
+          { label: "Polsterbett weiss", url: "de/produkte/betten-matratzen/betten/polsterbetten/polsterbett-weiss/", slug: "polsterbett-weiss", filterSpec: {"Typ": "Polsterbett", "Farbe": "weiss"}, children: [] },
+          { label: "Polsterbett schwarz", url: "de/produkte/betten-matratzen/betten/polsterbetten/polsterbett-schwarz/", slug: "polsterbett-schwarz", filterSpec: {"Typ": "Polsterbett", "Farbe": "schwarz"}, children: [] },
+          { label: "Polsterbett grau", url: "de/produkte/betten-matratzen/betten/polsterbetten/polsterbett-grau/", slug: "polsterbett-grau", filterSpec: {"Typ": "Polsterbett", "Farbe": "grau"}, children: [] },
+          { label: "Esposa Polsterbett", url: "de/produkte/betten-matratzen/betten/polsterbetten/esposa-polsterbett/", slug: "esposa-polsterbett", filterSpec: {"Typ": "Polsterbett", "Marke": "Esposa"}, children: [] },
+          { label: "Hasena Polsterbett", url: "de/produkte/betten-matratzen/betten/polsterbetten/hasena-polsterbett/", slug: "hasena-polsterbett", filterSpec: {"Typ": "Polsterbett", "Marke": "Hasena"}, children: [] }
+        ] },
+          { label: "Bettanlagen", url: "de/produkte/betten-matratzen/betten/bettanlagen/", slug: "bettanlagen", filterSpec: {"Kategorie": "Bett"}, children: [
+          { label: "Bettanlage 140x200", url: "de/produkte/betten-matratzen/betten/bettanlagen/bettanlage-140x200/", slug: "bettanlage-140x200", filterSpec: {"Kategorie": "Bett", "Grösse": "140x200"}, children: [] },
+          { label: "Bettanlage 160x200", url: "de/produkte/betten-matratzen/betten/bettanlagen/bettanlage-160x200/", slug: "bettanlage-160x200", filterSpec: {"Kategorie": "Bett", "Grösse": "160x200"}, children: [] },
+          { label: "Bettanlage 180x200", url: "de/produkte/betten-matratzen/betten/bettanlagen/bettanlage-180x200/", slug: "bettanlage-180x200", filterSpec: {"Kategorie": "Bett", "Grösse": "180x200"}, children: [] },
+          { label: "Bettanlage 200x200", url: "de/produkte/betten-matratzen/betten/bettanlagen/bettanlage-200x200/", slug: "bettanlage-200x200", filterSpec: {"Kategorie": "Bett", "Grösse": "200x200"}, children: [] }
+        ] },
+          { label: "Bett mit Stauraum", url: "de/produkte/betten-matratzen/betten/bett-mit-stauraum/", slug: "bett-mit-stauraum", filterSpec: {"Kategorie": "Bett", "Typ": "Polsterbett"}, children: [
+          { label: "Bett mit Stauraum 90x200", url: "de/produkte/betten-matratzen/betten/bett-mit-stauraum/bett-mit-stauraum-90x200/", slug: "bett-mit-stauraum-90x200", filterSpec: {"Kategorie": "Bett", "Typ": "Polsterbett", "Grösse": "90x200"}, children: [] },
+          { label: "Bett mit Stauraum 140x200", url: "de/produkte/betten-matratzen/betten/bett-mit-stauraum/bett-mit-stauraum-140x200/", slug: "bett-mit-stauraum-140x200", filterSpec: {"Kategorie": "Bett", "Typ": "Polsterbett", "Grösse": "140x200"}, children: [] },
+          { label: "Bett mit Stauraum 160x200", url: "de/produkte/betten-matratzen/betten/bett-mit-stauraum/bett-mit-stauraum-160x200/", slug: "bett-mit-stauraum-160x200", filterSpec: {"Kategorie": "Bett", "Typ": "Polsterbett", "Grösse": "160x200"}, children: [] },
+          { label: "Bett mit Stauraum 180x200", url: "de/produkte/betten-matratzen/betten/bett-mit-stauraum/bett-mit-stauraum-180x200/", slug: "bett-mit-stauraum-180x200", filterSpec: {"Kategorie": "Bett", "Typ": "Polsterbett", "Grösse": "180x200"}, children: [] }
+        ] },
+          { label: "Bett mit Schubladen", url: "de/produkte/betten-matratzen/betten/bett-mit-schubladen/", slug: "bett-mit-schubladen", filterSpec: {"Kategorie": "Bett", "Typ": "Polsterbett"}, children: [] },
+          { label: "Bett mit Bettkasten", url: "de/produkte/betten-matratzen/betten/bett-mit-bettkasten/", slug: "bett-mit-bettkasten", filterSpec: {"Kategorie": "Bett", "Typ": "Polsterbett"}, children: [] },
+          { label: "Bett", url: "de/produkte/betten-matratzen/betten/bett/", slug: "bett", filterSpec: {"Kategorie": "Bett"}, children: [
+          { label: "Bett 90x200", url: "de/produkte/betten-matratzen/betten/bett/bett-90x200/", slug: "bett-90x200", filterSpec: {"Kategorie": "Bett", "Grösse": "90x200"}, children: [] },
+          { label: "Bett 120x200", url: "de/produkte/betten-matratzen/betten/bett/bett-120x200/", slug: "bett-120x200", filterSpec: {"Kategorie": "Bett", "Grösse": "120x200"}, children: [] },
+          { label: "Bett 140x200", url: "de/produkte/betten-matratzen/betten/bett/bett-140x200/", slug: "bett-140x200", filterSpec: {"Kategorie": "Bett", "Grösse": "140x200"}, children: [] },
+          { label: "Bett 160x200", url: "de/produkte/betten-matratzen/betten/bett/bett-160x200/", slug: "bett-160x200", filterSpec: {"Kategorie": "Bett", "Grösse": "160x200"}, children: [] },
+          { label: "Bett 180x200", url: "de/produkte/betten-matratzen/betten/bett/bett-180x200/", slug: "bett-180x200", filterSpec: {"Kategorie": "Bett", "Grösse": "180x200"}, children: [] },
+          { label: "Bett 200x200", url: "de/produkte/betten-matratzen/betten/bett/bett-200x200/", slug: "bett-200x200", filterSpec: {"Kategorie": "Bett", "Grösse": "200x200"}, children: [] },
+          { label: "Hasena Bett", url: "de/produkte/betten-matratzen/betten/bett/hasena-bett/", slug: "hasena-bett", filterSpec: {"Kategorie": "Bett", "Marke": "Hasena"}, children: [] },
+          { label: "Bett mit Kopfteil", url: "de/produkte/betten-matratzen/betten/bett/bett-mit-kopfteil/", slug: "bett-mit-kopfteil", filterSpec: {"Kategorie": "Bett"}, children: [] },
+          { label: "Weisses Bett", url: "de/produkte/betten-matratzen/betten/bett/weisses-bett/", slug: "weisses-bett", filterSpec: {"Kategorie": "Bett", "Farbe": "weiss"}, children: [] },
+          { label: "Bett beige", url: "de/produkte/betten-matratzen/betten/bett/bett-beige/", slug: "bett-beige", filterSpec: {"Kategorie": "Bett", "Farbe": "beige"}, children: [] },
+          { label: "Bett gelb", url: "de/produkte/betten-matratzen/betten/bett/bett-gelb/", slug: "bett-gelb", filterSpec: {"Kategorie": "Bett", "Farbe": "gelb"}, children: [] },
+          { label: "Bett pink", url: "de/produkte/betten-matratzen/betten/bett/bett-pink/", slug: "bett-pink", filterSpec: {"Kategorie": "Bett", "Farbe": "rosa"}, children: [] },
+          { label: "Bett rot", url: "de/produkte/betten-matratzen/betten/bett/bett-rot/", slug: "bett-rot", filterSpec: {"Kategorie": "Bett", "Farbe": "rot"}, children: [] },
+          { label: "Bett grau", url: "de/produkte/betten-matratzen/betten/bett/bett-grau/", slug: "bett-grau", filterSpec: {"Kategorie": "Bett", "Farbe": "grau"}, children: [] },
+          { label: "Bett schwarz", url: "de/produkte/betten-matratzen/betten/bett/bett-schwarz/", slug: "bett-schwarz", filterSpec: {"Kategorie": "Bett", "Farbe": "schwarz"}, children: [] },
+          { label: "Bett rosa", url: "de/produkte/betten-matratzen/betten/bett/bett-rosa/", slug: "bett-rosa", filterSpec: {"Kategorie": "Bett", "Farbe": "rosa"}, children: [] },
+          { label: "Bett braun", url: "de/produkte/betten-matratzen/betten/bett/bett-braun/", slug: "bett-braun", filterSpec: {"Kategorie": "Bett", "Farbe": "braun"}, children: [] },
+          { label: "Rattanbett", url: "de/produkte/betten-matratzen/betten/bett/rattanbett/", slug: "rattanbett", filterSpec: {"Kategorie": "Bett", "Material": "Rattan"}, children: [] },
+          { label: "Lederbett", url: "de/produkte/betten-matratzen/betten/bett/lederbett/", slug: "lederbett", filterSpec: {"Kategorie": "Bett", "Material": "Leder"}, children: [] }
+        ] },
+          { label: "Ausziehbetten", url: "de/produkte/betten-matratzen/betten/ausziehbetten/", slug: "ausziehbetten", filterSpec: {"Typ": "Ausziehbett"}, children: [
+          { label: "Ausziehbett 90x200", url: "de/produkte/betten-matratzen/betten/ausziehbetten/ausziehbett-90x200/", slug: "ausziehbett-90x200", filterSpec: {"Typ": "Ausziehbett", "Grösse": "90x200"}, children: [] },
+          { label: "Ausziehbett 120x200", url: "de/produkte/betten-matratzen/betten/ausziehbetten/ausziehbett-120x200/", slug: "ausziehbett-120x200", filterSpec: {"Typ": "Ausziehbett", "Grösse": "120x200"}, children: [] },
+          { label: "Ausziehbett 140x200", url: "de/produkte/betten-matratzen/betten/ausziehbetten/ausziehbett-140x200/", slug: "ausziehbett-140x200", filterSpec: {"Typ": "Ausziehbett", "Grösse": "140x200"}, children: [] },
+          { label: "Ausziehbett 160x200", url: "de/produkte/betten-matratzen/betten/ausziehbetten/ausziehbett-160x200/", slug: "ausziehbett-160x200", filterSpec: {"Typ": "Ausziehbett", "Grösse": "160x200"}, children: [] }
+        ] },
+          { label: "Metallbett", url: "de/produkte/betten-matratzen/betten/metallbett/", slug: "metallbett", filterSpec: {"Typ": "Metallbett"}, children: [
+          { label: "Metallbett 90x200", url: "de/produkte/betten-matratzen/betten/metallbett/metallbett-90x200/", slug: "metallbett-90x200", filterSpec: {"Typ": "Metallbett", "Grösse": "90x200"}, children: [] },
+          { label: "Metallbett 120x200", url: "de/produkte/betten-matratzen/betten/metallbett/metallbett-120x200/", slug: "metallbett-120x200", filterSpec: {"Typ": "Metallbett", "Grösse": "120x200"}, children: [] },
+          { label: "Metallbett 140x200", url: "de/produkte/betten-matratzen/betten/metallbett/metallbett-140x200/", slug: "metallbett-140x200", filterSpec: {"Typ": "Metallbett", "Grösse": "140x200"}, children: [] },
+          { label: "Metallbett 160x200", url: "de/produkte/betten-matratzen/betten/metallbett/metallbett-160x200/", slug: "metallbett-160x200", filterSpec: {"Typ": "Metallbett", "Grösse": "160x200"}, children: [] },
+          { label: "Metallbett 180x200", url: "de/produkte/betten-matratzen/betten/metallbett/metallbett-180x200/", slug: "metallbett-180x200", filterSpec: {"Typ": "Metallbett", "Grösse": "180x200"}, children: [] }
+        ] },
+          { label: "Holzbett", url: "de/produkte/betten-matratzen/betten/holzbett/", slug: "holzbett", filterSpec: {"Typ": ["Holzbett", "Massivholzbett"]}, children: [] }
+        ] },
+          { label: "Matratzen", url: "de/produkte/betten-matratzen/matratzen/", slug: "matratzen", filterSpec: {"Kategorie": "Matratze"}, children: [] },
+          { label: "Schlafzimmer Textilien", url: "de/produkte/betten-matratzen/schlafzimmer-textilien/", slug: "schlafzimmer-textilien", filterSpec: {"Kategorie": "Textil"}, children: [] },
+          { label: "Lattenroste", url: "de/produkte/betten-matratzen/lattenroste/", slug: "lattenroste", filterSpec: {"Kategorie": "Lattenrost"}, children: [] },
+          { label: "Nachttische", url: "de/produkte/betten-matratzen/nachttische/", slug: "nachttische", filterSpec: {"Kategorie": "Nachttisch"}, children: [] },
+          { label: "Bettkästen", url: "de/produkte/betten-matratzen/bettkaesten/", slug: "bettkaesten", filterSpec: {"Kategorie": "Bettkasten"}, children: [] }
+        ]
+        /* BETTEN_MATRATZEN_CHILDREN:END */
+      },
       { label: 'Sofas & Sessel', url: 'de/produkte/sofas-sessel/', slug: 'sofas-sessel',
         image: 'images/cat-sofas-sessel.jpg',
         related: ['wohnzimmer', 'dekoration'],
