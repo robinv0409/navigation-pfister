@@ -43,11 +43,11 @@
   function renderShell(host) {
     host.innerHTML = `
       <div class="filter-toolbar">
-        <label class="upload-btn">
-          <input type="file" id="file-input" accept=".xlsx,.xls,.csv" hidden>
+        <button class="upload-btn" id="upload-trigger" type="button">
           <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 4v12m-5-5l5-5 5 5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <span>Excel / CSV hochladen</span>
-        </label>
+        </button>
+        <input type="file" id="file-input" class="visually-hidden" accept=".xlsx,.xls,.csv">
         <button class="demo-btn" id="demo-btn" type="button">Demo-Daten laden</button>
         <button class="reset-btn" id="reset-btn" type="button" hidden>Zurücksetzen</button>
       </div>
@@ -56,6 +56,7 @@
         aus den Spalten werden automatisch Filter gebaut.
         <a href="../../../sample-daten-betten.csv" download>Beispieldatei herunterladen</a>
       </div>
+      <div class="upload-error" id="upload-error" hidden></div>
       <div class="result-count" id="result-count" hidden></div>
       <div class="filter-panel" id="filter-panel" hidden></div>
       <div class="product-grid" id="dynamic-grid"></div>
@@ -63,9 +64,25 @@
   }
 
   function bindUI() {
-    document.getElementById('file-input').addEventListener('change', onFileSelected);
+    const input = document.getElementById('file-input');
+    document.getElementById('upload-trigger').addEventListener('click', () => input.click());
+    input.addEventListener('change', onFileSelected);
     document.getElementById('demo-btn').addEventListener('click', loadDemoData);
     document.getElementById('reset-btn').addEventListener('click', resetAll);
+
+    /* Warnen, wenn SheetJS nach Seitenladen nicht verfuegbar ist. */
+    window.addEventListener('load', () => {
+      if (typeof XLSX === 'undefined') {
+        showError('SheetJS konnte nicht geladen werden (Internet pruefen). CSV funktioniert trotzdem.');
+      }
+    });
+  }
+
+  function showError(msg) {
+    const el = document.getElementById('upload-error');
+    if (!el) { alert(msg); return; }
+    el.textContent = msg;
+    el.hidden = false;
   }
 
   /* -------------------- Datei-Upload -------------------- */
@@ -105,7 +122,7 @@
 
   function parseXLSX(file) {
     if (typeof XLSX === 'undefined') {
-      alert('SheetJS konnte nicht geladen werden. Bitte Internet-Verbindung pruefen oder CSV nutzen.');
+      showError('SheetJS konnte nicht geladen werden. Bitte Internet-Verbindung pruefen oder CSV nutzen.');
       return;
     }
     const reader = new FileReader();
@@ -357,29 +374,38 @@
   /* -------------------- Demo-Daten (50 Betten) -------------------- */
 
   function loadDemoData() {
-    const data = buildDemoBeds(50);
+    const data = buildDemoData();
     setData(data);
   }
 
-  function buildDemoBeds(n) {
-    const typen = ['Boxspringbett', 'Polsterbett', 'Massivholzbett', 'Metallbett', 'Futonbett'];
-    const groessen = ['90x200', '140x200', '160x200', '180x200', '200x200'];
+  function buildDemoData() {
+    const betten_typen = [
+      'Boxspringbett', 'Polsterbett', 'Massivholzbett', 'Metallbett',
+      'Futonbett', 'Himmelbett', 'Klappbett', 'Ausziehbett', 'Holzbett'
+    ];
+    const groessen = ['90x200', '120x200', '140x200', '160x200', '180x200', '200x200'];
     const haerten = ['weich', 'mittel', 'fest'];
-    const materialien = ['Stoff', 'Leder', 'Kunstleder', 'Eiche massiv', 'Buche', 'Metall'];
-    const farben = ['grau', 'anthrazit', 'beige', 'weiss', 'schwarz', 'blau', 'braun', 'grün'];
-    const marken = ['Pfister Collection', 'Swissflex', 'Hülsta', 'Nolte', 'Roviva', 'Schramm'];
+    const materialien = ['Stoff', 'Leder', 'Kunstleder', 'Eiche massiv', 'Buche', 'Metall', 'Rattan'];
+    const farben = ['grau', 'anthrazit', 'beige', 'weiss', 'schwarz', 'blau', 'braun', 'grün', 'rosa', 'rot', 'gelb'];
+    const marken_betten = ['Pfister Collection', 'Swissflex', 'Hülsta', 'Nolte', 'Roviva', 'Schramm', 'Hasena', 'Jensen', 'Riposa', 'Esposa'];
     const staedte = ['Basel', 'Zürich', 'Genève', 'Bern', 'Luzern', 'Davos', 'Sion', 'Lugano', 'Chur', 'Aarau', 'Winterthur', 'Thun', 'St. Gallen', 'Biel', 'Zermatt'];
-
     function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
-    function picks(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
 
     const out = [];
-    for (let i = 0; i < n; i++) {
-      const typ = pick(typen);
-      const groesse = pick(groessen);
-      const material = pick(materialien);
-      const base = typ === 'Boxspringbett' ? 2200 : typ === 'Polsterbett' ? 1400 : typ === 'Massivholzbett' ? 1800 : typ === 'Metallbett' ? 800 : 900;
-      const preis = Math.round((base + Math.random() * 1500) / 10) * 10;
+
+    /* 60 Betten — mindestens 1 pro Typ garantiert. */
+    betten_typen.forEach(typ => {
+      groessen.forEach(groesse => { pushBett(typ, groesse); });
+    });
+    while (out.filter(r => r.Kategorie === 'Bett').length < 60) {
+      pushBett(pick(betten_typen), pick(groessen));
+    }
+    function pushBett(typ, groesse) {
+      const base = typ === 'Boxspringbett' ? 2200 : typ === 'Polsterbett' ? 1400
+        : typ === 'Massivholzbett' || typ === 'Holzbett' ? 1800
+        : typ === 'Metallbett' ? 800 : typ === 'Himmelbett' ? 1600
+        : typ === 'Klappbett' ? 700 : typ === 'Ausziehbett' ? 900 : 900;
+      const preis = Math.round((base + Math.random() * 1200) / 10) * 10;
       const sale = Math.random() < 0.2;
       const neu = !sale && Math.random() < 0.25;
       out.push({
@@ -388,14 +414,86 @@
         AltPreis: sale ? preis + Math.round(preis * 0.25 / 10) * 10 : '',
         Bild: '',
         Badge: sale ? 'Sale' : neu ? 'Neu' : '',
+        Kategorie: 'Bett',
         Typ: typ,
         'Grösse': groesse,
         'Härtegrad': pick(haerten),
-        Material: material,
+        Material: pick(materialien),
         Farbe: pick(farben),
-        Marke: pick(marken)
+        Marke: pick(marken_betten)
       });
     }
+
+    /* 15 Matratzen */
+    for (let i = 0; i < 15; i++) {
+      const g = pick(groessen);
+      const preis = 390 + Math.round(Math.random() * 1100 / 10) * 10;
+      out.push({
+        Name: `Matratze ${pick(staedte)} ${g}`,
+        Preis: preis, AltPreis: '', Bild: '',
+        Badge: Math.random() < 0.2 ? 'Neu' : '',
+        Kategorie: 'Matratze',
+        Typ: pick(['Federkern', 'Kaltschaum', 'Visco', 'Latex']),
+        'Grösse': g,
+        'Härtegrad': pick(haerten),
+        Material: pick(['Baumwoll-Bezug', 'Polyester-Bezug', 'Merino']),
+        Farbe: 'weiss',
+        Marke: pick(['Swissflex', 'Roviva', 'Hüsler', 'Schramm'])
+      });
+    }
+
+    /* 10 Lattenroste */
+    for (let i = 0; i < 10; i++) {
+      const g = pick(groessen);
+      out.push({
+        Name: `Lattenrost ${pick(['Komfort', 'Premium', 'Standard', 'Elektrisch'])} ${g}`,
+        Preis: 190 + Math.round(Math.random() * 800 / 10) * 10,
+        AltPreis: '', Bild: '', Badge: '',
+        Kategorie: 'Lattenrost',
+        Typ: pick(['manuell', 'elektrisch', 'motorisch']),
+        'Grösse': g,
+        'Härtegrad': '', Material: 'Buche', Farbe: '', Marke: pick(['Pfister Collection', 'Roviva'])
+      });
+    }
+
+    /* 8 Nachttische */
+    for (let i = 0; i < 8; i++) {
+      out.push({
+        Name: `Nachttisch ${pick(staedte)}`,
+        Preis: 190 + Math.round(Math.random() * 500 / 10) * 10,
+        AltPreis: '', Bild: '', Badge: '',
+        Kategorie: 'Nachttisch',
+        Typ: pick(['stehend', 'hängend']),
+        'Grösse': '', 'Härtegrad': '',
+        Material: pick(['Eiche massiv', 'Buche', 'MDF']),
+        Farbe: pick(farben), Marke: pick(['Pfister Collection', 'Hülsta'])
+      });
+    }
+
+    /* 6 Bettkästen + 10 Textilien */
+    for (let i = 0; i < 6; i++) {
+      out.push({
+        Name: `Bettkasten ${pick(['Rollo', 'Standard', 'Premium'])}`,
+        Preis: 290 + Math.round(Math.random() * 300 / 10) * 10,
+        AltPreis: '', Bild: '', Badge: '',
+        Kategorie: 'Bettkasten', Typ: '',
+        'Grösse': pick(['140x200', '160x200', '180x200']), 'Härtegrad': '',
+        Material: pick(['Stoff', 'Leder']),
+        Farbe: pick(farben), Marke: 'Pfister Collection'
+      });
+    }
+    for (let i = 0; i < 10; i++) {
+      out.push({
+        Name: `Bettwäsche Set ${pick(['Linea', 'Blanca', 'Nero', 'Ticino'])}`,
+        Preis: 59 + Math.round(Math.random() * 150 / 10) * 10,
+        AltPreis: '', Bild: '', Badge: '',
+        Kategorie: 'Textil', Typ: 'Bettwäsche',
+        'Grösse': pick(['160x210', '200x210', '240x240']), 'Härtegrad': '',
+        Material: pick(['Baumwolle', 'Leinen', 'Satin', 'Jersey']),
+        Farbe: pick(farben), Marke: 'Pfister Collection'
+      });
+    }
+
     return out;
   }
 })();
