@@ -351,13 +351,13 @@ function buildPanel(node, depth, parentNode) {
   /* Indexierte Filter (Level-6-ähnlich) erscheinen NICHT im Burger —
      sie sind nur am Seitenende als Text-Links erreichbar (+ Direkt-URL). */
   const visibleChildren = (node.children || []).filter(c => !c.indexedFilter);
-  const isTopLevel = depth === 0;
   visibleChildren.forEach(child => {
     const li = document.createElement('li');
     const visibleGrandChildren = (child.children || []).filter(c => !c.indexedFilter);
     const hasChildren = visibleGrandChildren.length > 0;
-    /* Thumbnail nur auf Top-Ebene (Produkte / Räume / Marken / Angebote / Designmöbel). */
-    const thumb = isTopLevel && child.image
+    /* Thumbnail vor Label, wann immer der Knoten ein image-Feld trägt
+       (Top-Level + alle Level-4-Kategorien wie "Betten & Matratzen"). */
+    const thumb = child.image
       ? `<img class="nav-thumb" src="${resolveUrl(child.image)}" alt="" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'nav-thumb img-placeholder'}))"/>`
       : '';
     if (hasChildren) {
