@@ -237,6 +237,8 @@ def generate_html(chain, node):
     label = node['label']
     url_path = abs_path_for(chain)           # z.B. de/produkte/betten-matratzen/betten/boxspringbetten/
     filter_spec = node.get('filterSpec', {})
+    has_children = bool(node.get('children'))
+    current_slug = chain[-1]
 
     # Tiefe in Verzeichnis-Segmenten
     depth = url_path.count('/')              # z.B. "de/produkte/betten-matratzen/betten/boxspringbetten/" -> 5
@@ -270,6 +272,20 @@ def generate_html(chain, node):
     spec_json = json.dumps(filter_spec, ensure_ascii=False)
 
     hreflang_de = 'de/produkte/betten-matratzen/' + '/'.join(chain) + '/'
+
+    # Kacheln fuer Unterkategorien:
+    # Nur auf Level-4-Seiten (direkt unter betten-matratzen). Level-5-Seiten
+    # wie "Boxspringbetten" zeigen KEINE Kacheln fuer ihre indexierten
+    # Filter-URLs — diese sind nur via Burger-Menue und interne Links
+    # erreichbar (SEO). Auf Produkt-Ebenen lenken Kacheln vom Produkt-Grid ab.
+    tiles_section = ''
+    if has_children and len(chain) == 1:
+        tiles_section = f'''
+    <section>
+      <h2>Kategorien</h2>
+      <div class="tile-grid" data-render-grid="{current_slug}"></div>
+    </section>
+'''
 
     html = f"""<!DOCTYPE html>
 <html lang="de-CH">
@@ -311,8 +327,11 @@ def generate_html(chain, node):
       <h1>{esc(label)}</h1>
       <p class="intro">{esc(label)} bei Pfister – vorgefilterte Auswahl basierend auf den hochgeladenen Produktdaten.</p>
     </section>
-
-    <div id="subcat-app" data-upload-path="{upload_path}"></div>
+{tiles_section}
+    <section>
+      <h2>Produkte</h2>
+      <div id="subcat-app" data-upload-path="{upload_path}"></div>
+    </section>
   </main>
 
   <footer class="site-footer">© Pfister – Prototyp · Alle Preise in CHF</footer>
