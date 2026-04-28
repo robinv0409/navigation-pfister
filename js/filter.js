@@ -347,29 +347,12 @@
 
   function renderProducts(rows) {
     const host = document.getElementById('dynamic-grid');
-    if (!rows.length) {
-      host.innerHTML = '<p class="muted" style="grid-column:1/-1;padding:24px 0;">Keine Treffer mit diesen Filtern. Ändern Sie die Auswahl.</p>';
+    if (!host) return;
+    if (window.PfisterCard) {
+      window.PfisterCard.renderInto(host, rows);
       return;
     }
-    host.innerHTML = rows.map(r => {
-      const name = escapeHtml(r['Name'] || 'Produkt');
-      const price = r['Preis'] ? `CHF ${formatPrice(r['Preis'])}` : '';
-      const old = r['AltPreis'] ? `<span class="old">CHF ${formatPrice(r['AltPreis'])}</span>` : '';
-      const priceHtml = r['AltPreis']
-        ? `${old}<span class="new">${price}</span>`
-        : price;
-      const badge = r['Badge'] && r['Badge'].toLowerCase() === 'sale' ? '<span class="badge badge-sale">Sale</span>'
-                  : r['Badge'] && r['Badge'].toLowerCase() === 'neu' ? '<span class="badge">Neu</span>'
-                  : '';
-      const img = r['Bild'] ? escapeAttr(r['Bild']) : '';
-      return `
-        <a class="product-card" href="#">
-          <div class="card-img">${badge}<img src="${img}" alt="${name}" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-placeholder',textContent:this.alt}))"/></div>
-          <div class="product-name">${name}</div>
-          <div class="product-price">${priceHtml}</div>
-        </a>
-      `;
-    }).join('');
+    host.innerHTML = rows.map(r => `<a class="product-card" href="#"><div class="product-name">${escapeHtml(r['Name'] || 'Produkt')}</div></a>`).join('');
   }
 
   function renderEmpty() {

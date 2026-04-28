@@ -76,6 +76,92 @@ def derive_kategorie(rec):
         return TYP_ZU_KATEGORIE[typ]
     return 'Bett'
 
+# --------------------------------------------------------------------------
+# Auto-Augmentation — fügt fehlende Demo-Werte deterministisch hinzu
+# --------------------------------------------------------------------------
+# Pfister-Daten haben oft keine Preise/Ratings/Discounts. Damit der
+# Prototyp wie ein echter Webshop wirkt, generieren wir diese Werte
+# pseudozufällig — aber STABIL (gleicher Datensatz → gleicher Wert),
+# basiert auf einem Hash über ArtikelNr (oder Name) als Seed.
+
+import hashlib
+import random as _random
+
+# Preisbereiche pro Typ (ungefähr Pfister-Niveau).
+PRICE_RANGES = {
+    'Boxspringbett':  (1490, 4990),
+    'Polsterbett':    (590, 2490),
+    'Holzbett':       (590, 2290),
+    'Massivholzbett': (890, 2890),
+    'Metallbett':     (390, 1290),
+    'Himmelbett':     (1290, 3490),
+    'Klappbett':      (390, 990),
+    'Futonbett':      (490, 1290),
+    'Ausziehbett':    (490, 1490),
+    'Raumsparbett':   (490, 1290),
+    'Kinderbett':     (290, 990),
+    'Babybett':       (190, 690),
+    'Doppelbett':     (790, 2490),
+    'Einzelbett':     (390, 1290),
+    'Tagesbett':      (590, 1490),
+    'Etagenbett':     (590, 1690),
+    'Hochbett':       (490, 1390),
+    'Familienbett':   (1290, 3490),
+    'Bettanlage':     (990, 2990),
+    'Balkenbett':     (790, 2290),
+    'Lederbett':      (1490, 3990),
+}
+
+def _seed_for(rec):
+    key = (rec.get('ArtikelNr') or rec.get('Name') or '').strip()
+    if not key:
+        key = json.dumps(rec, sort_keys=True, ensure_ascii=False)
+    return int(hashlib.md5(key.encode('utf-8')).hexdigest(), 16)
+
+def augment(rec):
+    """Generiert fehlende Felder deterministisch (Demo-Daten für Prototyp)."""
+    rng = _random.Random(_seed_for(rec))
+
+    # --- Preis ---
+    if not rec.get('Preis'):
+        typ = rec.get('Typ', '').strip()
+        lo, hi = PRICE_RANGES.get(typ, (390, 1990))
+        # Preis zu nächsten 10er, mit ".90" als typischem Pfister-Suffix.
+        base = round(rng.uniform(lo, hi) / 10) * 10
+        rec['Preis'] = f'{base - 10 + 0.90:.2f}'   # z.B. 438.90
+
+    # --- Sale (25% der Produkte) ---
+    is_sale = rng.random() < 0.25
+    if is_sale and not rec.get('AltPreis'):
+        try:
+            preis_num = float(str(rec['Preis']).replace(',', '.'))
+            discount_pct = rng.choice([15, 20, 25, 30, 35, 40])
+            alt = round(preis_num / (1 - discount_pct / 100) / 10) * 10
+            rec['AltPreis'] = f'{alt:.2f}'
+            rec['Discount'] = str(discount_pct)
+        except Exception:
+            pass
+
+    # --- Rating + ReviewCount (alle Produkte) ---
+    if not rec.get('Rating'):
+        rating = round(rng.uniform(3.8, 5.0) * 10) / 10
+        rec['Rating'] = f'{rating:.1f}'
+    if not rec.get('ReviewCount'):
+        rec['ReviewCount'] = str(rng.randint(2, 87))
+
+    # --- Online Only (35% der Produkte) ---
+    if 'OnlineOnly' not in rec or rec.get('OnlineOnly') == '':
+        rec['OnlineOnly'] = 'true' if rng.random() < 0.35 else ''
+
+    # --- Badge (Neu für 15%, Sale wenn Discount, sonst nichts) ---
+    if not rec.get('Badge'):
+        if is_sale:
+            rec['Badge'] = 'Sale'
+        elif rng.random() < 0.15:
+            rec['Badge'] = 'Neu'
+
+    return rec
+
 def normalize_header(h):
     h = h.strip()
     return HEADER_MAP.get(h, h)
@@ -176,6 +262,8 @@ def rows_to_records(rows):
             rec['Grösse'] = rec['Matratzenmass']
         if rec.get('Typ') and not rec.get('Produktart'):
             rec['Produktart'] = rec['Typ']
+        # Fehlende Demo-Werte (Preis, Rating, Discount, OnlineOnly) ergänzen.
+        rec = augment(rec)
         records.append(rec)
     return records
 

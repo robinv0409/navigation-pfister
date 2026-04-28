@@ -194,25 +194,16 @@
 
   function renderProducts(rows, host) {
     if (!host) return;
-    if (!rows.length) {
-      host.innerHTML = '<p class="muted" style="grid-column:1/-1;padding:24px 0;">Keine Produkte in dieser Auswahl.</p>';
+    /* Pfister-Card-Renderer (window.PfisterCard, geladen via js/cards.js). */
+    if (window.PfisterCard) {
+      window.PfisterCard.renderInto(host, rows);
       return;
     }
+    /* Defensive Fallback, falls cards.js nicht geladen ist. */
     host.innerHTML = rows.map(r => {
       const name = esc(r['Name'] || 'Produkt');
       const price = r['Preis'] ? `CHF ${formatPrice(r['Preis'])}` : '';
-      const old = r['AltPreis'] ? `<span class="old">CHF ${formatPrice(r['AltPreis'])}</span>` : '';
-      const priceHtml = r['AltPreis'] ? `${old}<span class="new">${price}</span>` : price;
-      const badge = r['Badge'] && r['Badge'].toLowerCase() === 'sale' ? '<span class="badge badge-sale">Sale</span>'
-                  : r['Badge'] && r['Badge'].toLowerCase() === 'neu' ? '<span class="badge">Neu</span>' : '';
-      const img = r['Bild'] ? esc(r['Bild']) : '';
-      return `
-        <a class="product-card" href="#">
-          <div class="card-img">${badge}<img src="${img}" alt="${name}" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-placeholder',textContent:this.alt}))"/></div>
-          <div class="product-name">${name}</div>
-          <div class="product-price">${priceHtml}</div>
-        </a>
-      `;
+      return `<a class="product-card" href="#"><div class="product-name">${name}</div><div class="product-price">${price}</div></a>`;
     }).join('');
   }
 

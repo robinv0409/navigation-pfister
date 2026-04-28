@@ -364,6 +364,7 @@ def generate_html(chain, node):
 
   <footer class="site-footer">© Pfister – Prototyp · Alle Preise in CHF</footer>
   <script src="{up}js/main.js"></script>
+  <script src="{up}js/cards.js"></script>
   <script src="{up}js/subcategory.js"></script>
 </body>
 </html>

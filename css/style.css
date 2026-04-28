@@ -189,24 +189,117 @@ p { margin: 0 0 12px; }
   padding: 3px 8px; letter-spacing: .5px; text-transform: uppercase;
 }
 
-/* --------- Product Cards --------- */
+/* --------- Product Cards (Pfister-Style) --------- */
 .product-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
 }
 .product-card {
-  display: block; color: var(--text); background: #fff;
+  display: flex; flex-direction: column;
+  background: #fff; color: var(--text);
+  border: 1px solid var(--grey-mid);
+  padding: 12px 10px 16px;
+  text-align: center;
   position: relative;
+  transition: border-color .15s ease;
 }
-.product-card .card-img {
-  aspect-ratio: 4 / 3; background: var(--grey-light); overflow: hidden;
+.product-card:hover { border-color: var(--text); }
+
+.product-card-img {
   position: relative;
+  aspect-ratio: 1 / 1;
+  background: var(--grey-light);
+  margin: -2px -2px 12px;
+  overflow: hidden;
 }
-.product-card .card-img img { width: 100%; height: 100%; object-fit: cover; }
-.product-card .card-img .img-placeholder { width: 100%; height: 100%; }
-.product-name { font-size: 14px; margin: 8px 0 4px; line-height: 1.3; }
-.product-price { font-size: 14px; font-weight: 600; }
-.product-price .old { color: var(--grey-muted); font-weight: 400; text-decoration: line-through; margin-right: 6px; }
-.product-price .new { color: var(--red); }
+.product-card-img img,
+.product-card-img .img-placeholder {
+  width: 100%; height: 100%; object-fit: contain;
+  background: var(--grey-light); color: var(--grey-muted);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px;
+}
+
+.product-discount {
+  position: absolute; top: 8px; right: 8px;
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: var(--red); color: #fff;
+  font-size: 13px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  letter-spacing: -0.3px;
+}
+
+.product-card-body {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 2px; flex: 1;
+}
+
+.product-pill {
+  display: inline-block;
+  padding: 3px 10px;
+  border: 1px solid var(--grey-mid);
+  font-size: 10px; letter-spacing: 0.3px;
+  margin-bottom: 6px; color: var(--text);
+}
+
+.product-brand {
+  font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.8px;
+  margin-top: 2px;
+}
+
+.product-name {
+  font-size: 13px; line-height: 1.3;
+  margin: 2px 0 6px;
+}
+
+.product-price {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 1px; margin: 4px 0 6px;
+}
+.product-price-new {
+  font-size: 18px; font-weight: 700;
+  color: var(--red); line-height: 1;
+}
+.product-price-new sup {
+  font-size: 11px; vertical-align: super; line-height: 0;
+  font-weight: 700;
+}
+.product-card.no-sale .product-price-new { color: var(--text); }
+.product-price-old {
+  font-size: 11px; color: var(--grey-muted);
+  text-decoration: line-through;
+}
+
+.product-rating {
+  display: flex; align-items: center; justify-content: center;
+  gap: 6px; font-size: 12px; margin-top: 4px;
+}
+.product-rating .stars {
+  display: inline-block; position: relative;
+  font-size: 13px; line-height: 1;
+  letter-spacing: 1px;
+  color: #d4d4d4;
+}
+.product-rating .stars::before { content: '★★★★★'; }
+.product-rating .stars::after {
+  content: '★★★★★';
+  position: absolute; top: 0; left: 0;
+  width: var(--rating, 100%); overflow: hidden;
+  color: var(--text);
+}
+.product-rating .rating-value { font-weight: 600; color: var(--text); }
+.product-rating .review-count { color: var(--grey-muted); }
+
+.product-color-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #888;
+  margin: 8px auto 0;
+  box-shadow: 0 0 0 1px var(--grey-mid);
+}
+
+/* Legacy badge support (für andere Produktkarten ohne Pfister-Style). */
 .badge {
   position: absolute; top: 8px; left: 8px;
   background: var(--text); color: #fff;
@@ -271,21 +364,27 @@ p { margin: 0 0 12px; }
 
 /* --------- Subcategory Filter-Panel (Pills, fester Reihenfolge) --------- */
 .subcat-filter-panel {
-  padding: 12px 16px 16px; border-bottom: 1px solid var(--grey-mid);
-  background: #fff;
+  padding: 14px 16px 4px; border-bottom: 1px solid var(--grey-mid);
+  background: #fff; margin: 0 -16px;
 }
 .subcat-filter-panel .filter-head {
   display: flex; align-items: center; justify-content: space-between;
-  margin: 4px 0 12px;
+  margin: 0 0 10px;
 }
-.subcat-filter-panel .filter-head h2 { margin: 0; font-size: 16px; }
+.subcat-filter-panel .filter-head h2 {
+  margin: 0; font-size: 13px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.8px;
+}
 .subcat-filter-panel .filter-clear {
-  font-size: 13px; color: var(--red); cursor: pointer;
+  font-size: 12px; color: var(--red); cursor: pointer;
   text-decoration: underline; background: none; border: 0; padding: 0;
+  font-family: inherit;
 }
-.subcat-filter-panel .filter-group { margin-bottom: 12px; }
+.subcat-filter-panel .filter-group { margin-bottom: 10px; }
 .subcat-filter-panel .filter-label {
-  font-size: 13px; font-weight: 600; margin-bottom: 6px;
+  font-size: 12px; font-weight: 600; margin-bottom: 6px;
+  text-transform: uppercase; letter-spacing: 0.4px;
+  color: var(--grey-muted);
 }
 .subcat-filter-panel .filter-pills {
   display: flex; flex-wrap: wrap; gap: 6px;
@@ -293,9 +392,23 @@ p { margin: 0 0 12px; }
 }
 .subcat-filter-panel .pill {
   font-size: 12px; padding: 6px 12px;
+  border-radius: 999px;
+  background: #fff; color: var(--text);
+  border: 1px solid var(--grey-mid);
+  cursor: pointer; transition: all .15s ease;
+  font-family: inherit;
+}
+.subcat-filter-panel .pill:hover {
+  border-color: var(--text);
 }
 .subcat-filter-panel .pill.active {
-  background: var(--red); color: #fff; border-color: var(--red);
+  background: var(--text); color: #fff; border-color: var(--text);
+}
+
+#subcat-grid { padding: 12px 0; }
+.result-count {
+  padding: 12px 0 6px; font-size: 13px;
+  color: var(--grey-muted);
 }
 
 /* --------- Indexed-Links: SEO-Text-Liste am Seitenende --------- */

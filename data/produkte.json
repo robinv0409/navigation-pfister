@@ -15,7 +15,11 @@
     "Farbe": "",
     "Kategorie": "Bett",
     "Grösse": "180x200",
-    "Produktart": "Holzbett"
+    "Produktart": "Holzbett",
+    "Preis": "670.90",
+    "Rating": "5.0",
+    "ReviewCount": "17",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/3372/byyu-bett-pure-elegance",
@@ -33,7 +37,14 @@
     "Farbe": "Weiss",
     "Kategorie": "Bett",
     "Grösse": "180x200",
-    "Produktart": "Holzbett"
+    "Produktart": "Holzbett",
+    "Preis": "610.90",
+    "AltPreis": "810.00",
+    "Discount": "25",
+    "Rating": "4.2",
+    "ReviewCount": "37",
+    "OnlineOnly": "true",
+    "Badge": "Sale"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/38535/hasena-raumsparbett-emil",
@@ -51,7 +62,11 @@
     "Farbe": "Anthrazit",
     "Kategorie": "Bett",
     "Grösse": "90x200",
-    "Produktart": "Ausziehbett"
+    "Produktart": "Ausziehbett",
+    "Preis": "1050.90",
+    "Rating": "4.0",
+    "ReviewCount": "37",
+    "OnlineOnly": "true"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/40565/byyu-boxspringbett-boxy",
@@ -69,7 +84,14 @@
     "Farbe": "Anthrazit",
     "Kategorie": "Bett",
     "Grösse": "140x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "3070.90",
+    "AltPreis": "4090.00",
+    "Discount": "25",
+    "Rating": "4.7",
+    "ReviewCount": "42",
+    "OnlineOnly": "",
+    "Badge": "Sale"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/41142/cilek-kinderbett-lapel",
@@ -87,7 +109,11 @@
     "Farbe": "Crème",
     "Kategorie": "Bett",
     "Grösse": "120x200",
-    "Produktart": "Kinderbett"
+    "Produktart": "Kinderbett",
+    "Preis": "580.90",
+    "Rating": "4.2",
+    "ReviewCount": "76",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/4579919/edy-liv-boxspringbett-lille-231",
@@ -105,7 +131,11 @@
     "Farbe": "Taupe",
     "Kategorie": "Bett",
     "Grösse": "180x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "2450.90",
+    "Rating": "4.2",
+    "ReviewCount": "3",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/4579974/jensen-boxspringbett-ambassador-continental",
@@ -122,7 +152,11 @@
     "Holzqualitaet": "",
     "Farbe": "Beige",
     "Kategorie": "Bett",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "3970.90",
+    "Rating": "4.4",
+    "ReviewCount": "56",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/4580044/byyu-boxspringbett-mallorca",
@@ -140,7 +174,11 @@
     "Farbe": "Anthrazit",
     "Kategorie": "Bett",
     "Grösse": "180x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "4890.90",
+    "Rating": "4.6",
+    "ReviewCount": "46",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/52128/johann-jakob-bett-aurelie",
@@ -158,7 +196,14 @@
     "Farbe": "Crème",
     "Kategorie": "Bett",
     "Grösse": "160x200",
-    "Produktart": "Polsterbett"
+    "Produktart": "Polsterbett",
+    "Preis": "2290.90",
+    "AltPreis": "3820.00",
+    "Discount": "40",
+    "Rating": "4.9",
+    "ReviewCount": "39",
+    "OnlineOnly": "true",
+    "Badge": "Sale"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/52928/hasena-bett-simona",
@@ -176,7 +221,14 @@
     "Farbe": "Grau",
     "Kategorie": "Bett",
     "Grösse": "160x200",
-    "Produktart": "Holzbett"
+    "Produktart": "Holzbett",
+    "Preis": "1350.90",
+    "AltPreis": "2080.00",
+    "Discount": "35",
+    "Rating": "4.8",
+    "ReviewCount": "21",
+    "OnlineOnly": "",
+    "Badge": "Sale"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/5410680/byyu-bett-elements",
@@ -194,7 +246,11 @@
     "Farbe": "Weiss",
     "Kategorie": "Bett",
     "Grösse": "140x200",
-    "Produktart": "Holzbett"
+    "Produktart": "Holzbett",
+    "Preis": "810.90",
+    "Rating": "4.0",
+    "ReviewCount": "4",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/5410861/linea-natura-bett-ontario",
@@ -212,7 +268,14 @@
     "Farbe": "",
     "Kategorie": "Bett",
     "Grösse": "160x200",
-    "Produktart": "Holzbett"
+    "Produktart": "Holzbett",
+    "Preis": "1110.90",
+    "AltPreis": "1850.00",
+    "Discount": "40",
+    "Rating": "4.1",
+    "ReviewCount": "30",
+    "OnlineOnly": "",
+    "Badge": "Sale"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/5411035/hasena-bett-finja",
@@ -230,7 +293,14 @@
     "Farbe": "",
     "Kategorie": "Bett",
     "Grösse": "160x200",
-    "Produktart": "Holzbett"
+    "Produktart": "Holzbett",
+    "Preis": "1050.90",
+    "AltPreis": "1310.00",
+    "Discount": "20",
+    "Rating": "4.1",
+    "ReviewCount": "71",
+    "OnlineOnly": "",
+    "Badge": "Sale"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/5411926/hasena-bett-lido",
@@ -248,7 +318,14 @@
     "Farbe": "",
     "Kategorie": "Bett",
     "Grösse": "90x200",
-    "Produktart": "Ausziehbett"
+    "Produktart": "Ausziehbett",
+    "Preis": "1390.90",
+    "AltPreis": "2140.00",
+    "Discount": "35",
+    "Rating": "3.9",
+    "ReviewCount": "23",
+    "OnlineOnly": "",
+    "Badge": "Sale"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/5411931/hasena-raumsparbett-lido",
@@ -266,7 +343,14 @@
     "Farbe": "Weiss",
     "Kategorie": "Bett",
     "Grösse": "90x200",
-    "Produktart": "Ausziehbett"
+    "Produktart": "Ausziehbett",
+    "Preis": "790.90",
+    "AltPreis": "1320.00",
+    "Discount": "40",
+    "Rating": "4.2",
+    "ReviewCount": "36",
+    "OnlineOnly": "",
+    "Badge": "Sale"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/5412175/hasena-bett-lounge-201",
@@ -284,7 +368,14 @@
     "Farbe": "",
     "Kategorie": "Bett",
     "Grösse": "180x200",
-    "Produktart": "Holzbett"
+    "Produktart": "Holzbett",
+    "Preis": "1550.90",
+    "AltPreis": "1820.00",
+    "Discount": "15",
+    "Rating": "4.6",
+    "ReviewCount": "48",
+    "OnlineOnly": "",
+    "Badge": "Sale"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/5412757/novel-bett-mattis-8096",
@@ -302,7 +393,11 @@
     "Farbe": "Anthrazit",
     "Kategorie": "Bett",
     "Grösse": "140x200",
-    "Produktart": "Polsterbett"
+    "Produktart": "Polsterbett",
+    "Preis": "2440.90",
+    "Rating": "4.7",
+    "ReviewCount": "16",
+    "OnlineOnly": "true"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/5413188/edy-liv-bett-fonna",
@@ -320,7 +415,11 @@
     "Farbe": "",
     "Kategorie": "Bett",
     "Grösse": "180x200",
-    "Produktart": "Holzbett"
+    "Produktart": "Holzbett",
+    "Preis": "1190.90",
+    "Rating": "3.9",
+    "ReviewCount": "29",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/5413287/hasena-bett-sondrio",
@@ -338,7 +437,11 @@
     "Farbe": "",
     "Kategorie": "Bett",
     "Grösse": "140x200",
-    "Produktart": "Holzbett"
+    "Produktart": "Holzbett",
+    "Preis": "1500.90",
+    "Rating": "4.3",
+    "ReviewCount": "50",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/5413323/mid-you-bett-liverpool-201",
@@ -356,7 +459,11 @@
     "Farbe": "Schwarz",
     "Kategorie": "Bett",
     "Grösse": "140x200",
-    "Produktart": "Holzbett"
+    "Produktart": "Holzbett",
+    "Preis": "1070.90",
+    "Rating": "3.8",
+    "ReviewCount": "48",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/5413393/trinatura-bett-liva",
@@ -374,7 +481,14 @@
     "Farbe": "",
     "Kategorie": "Bett",
     "Grösse": "200x200",
-    "Produktart": "Holzbett"
+    "Produktart": "Holzbett",
+    "Preis": "2070.90",
+    "AltPreis": "3190.00",
+    "Discount": "35",
+    "Rating": "4.8",
+    "ReviewCount": "79",
+    "OnlineOnly": "true",
+    "Badge": "Sale"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/5413624/edy-liv-bett-soomaa",
@@ -392,7 +506,12 @@
     "Farbe": "",
     "Kategorie": "Bett",
     "Grösse": "180x200",
-    "Produktart": "Holzbett"
+    "Produktart": "Holzbett",
+    "Preis": "1500.90",
+    "Rating": "4.2",
+    "ReviewCount": "60",
+    "OnlineOnly": "",
+    "Badge": "Neu"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/5414055/hasena-bett-stefano",
@@ -410,7 +529,11 @@
     "Farbe": "",
     "Kategorie": "Bett",
     "Grösse": "140x200",
-    "Produktart": "Holzbett"
+    "Produktart": "Holzbett",
+    "Preis": "1640.90",
+    "Rating": "4.2",
+    "ReviewCount": "26",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/5414247/hasena-bett-ostino",
@@ -428,7 +551,12 @@
     "Farbe": "",
     "Kategorie": "Bett",
     "Grösse": "140x200",
-    "Produktart": "Holzbett"
+    "Produktart": "Holzbett",
+    "Preis": "970.90",
+    "Rating": "4.6",
+    "ReviewCount": "2",
+    "OnlineOnly": "",
+    "Badge": "Neu"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/5414273/hasena-bett-ravenna",
@@ -446,7 +574,12 @@
     "Farbe": "",
     "Kategorie": "Bett",
     "Grösse": "180x200",
-    "Produktart": "Holzbett"
+    "Produktart": "Holzbett",
+    "Preis": "1770.90",
+    "Rating": "4.2",
+    "ReviewCount": "87",
+    "OnlineOnly": "",
+    "Badge": "Neu"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/5414688/xora-bett-nevada-201",
@@ -464,7 +597,14 @@
     "Farbe": "Anthrazit",
     "Kategorie": "Bett",
     "Grösse": "180x200",
-    "Produktart": "Bettanlage"
+    "Produktart": "Bettanlage",
+    "Preis": "2690.90",
+    "AltPreis": "3170.00",
+    "Discount": "15",
+    "Rating": "4.9",
+    "ReviewCount": "65",
+    "OnlineOnly": "true",
+    "Badge": "Sale"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/5415000/byyu-bett-alano",
@@ -482,7 +622,14 @@
     "Farbe": "Grau",
     "Kategorie": "Bett",
     "Grösse": "180x200",
-    "Produktart": "Polsterbett"
+    "Produktart": "Polsterbett",
+    "Preis": "870.90",
+    "AltPreis": "1090.00",
+    "Discount": "20",
+    "Rating": "4.4",
+    "ReviewCount": "72",
+    "OnlineOnly": "",
+    "Badge": "Sale"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/5415353/edy-liv-bett-mylla",
@@ -500,7 +647,11 @@
     "Farbe": "",
     "Kategorie": "Bett",
     "Grösse": "160x200",
-    "Produktart": "Holzbett"
+    "Produktart": "Holzbett",
+    "Preis": "1020.90",
+    "Rating": "3.8",
+    "ReviewCount": "47",
+    "OnlineOnly": "true"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/5415764/hasena-bett-calvari",
@@ -518,7 +669,11 @@
     "Farbe": "",
     "Kategorie": "Bett",
     "Grösse": "180x200",
-    "Produktart": "Holzbett"
+    "Produktart": "Holzbett",
+    "Preis": "1240.90",
+    "Rating": "4.6",
+    "ReviewCount": "23",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/5416196/byyu-bett-ivy",
@@ -536,7 +691,14 @@
     "Farbe": "Crème",
     "Kategorie": "Bett",
     "Grösse": "140x200",
-    "Produktart": "Polsterbett"
+    "Produktart": "Polsterbett",
+    "Preis": "1650.90",
+    "AltPreis": "2360.00",
+    "Discount": "30",
+    "Rating": "3.8",
+    "ReviewCount": "4",
+    "OnlineOnly": "",
+    "Badge": "Sale"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/5416643/hasena-boxspringbett-donna",
@@ -554,7 +716,11 @@
     "Farbe": "Sand",
     "Kategorie": "Bett",
     "Grösse": "160x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "2610.90",
+    "Rating": "4.9",
+    "ReviewCount": "10",
+    "OnlineOnly": "true"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/5416701/livetastic-bett-bern",
@@ -572,7 +738,11 @@
     "Farbe": "Schwarz",
     "Kategorie": "Bett",
     "Grösse": "200x200",
-    "Produktart": "Lederbett"
+    "Produktart": "Lederbett",
+    "Preis": "3150.90",
+    "Rating": "4.6",
+    "ReviewCount": "26",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/5416816/edy-liv-familienbett-la-familia",
@@ -590,7 +760,11 @@
     "Farbe": "",
     "Kategorie": "Bett",
     "Grösse": "270x200",
-    "Produktart": "Familienbett"
+    "Produktart": "Familienbett",
+    "Preis": "3000.90",
+    "Rating": "4.9",
+    "ReviewCount": "30",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/5417074/xora-bett-cube-8096",
@@ -608,7 +782,11 @@
     "Farbe": "Weiss",
     "Kategorie": "Bett",
     "Grösse": "140x200",
-    "Produktart": "Polsterbett"
+    "Produktart": "Polsterbett",
+    "Preis": "2390.90",
+    "Rating": "4.3",
+    "ReviewCount": "38",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/5417091/xora-bett-cube-8096",
@@ -626,7 +804,14 @@
     "Farbe": "Silber",
     "Kategorie": "Bett",
     "Grösse": "160x200",
-    "Produktart": "Polsterbett"
+    "Produktart": "Polsterbett",
+    "Preis": "740.90",
+    "AltPreis": "1060.00",
+    "Discount": "30",
+    "Rating": "4.1",
+    "ReviewCount": "10",
+    "OnlineOnly": "",
+    "Badge": "Sale"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/59414/edy-liv-bett-belle",
@@ -644,7 +829,11 @@
     "Farbe": "",
     "Kategorie": "Bett",
     "Grösse": "160x200",
-    "Produktart": "Holzbett"
+    "Produktart": "Holzbett",
+    "Preis": "1160.90",
+    "Rating": "5.0",
+    "ReviewCount": "40",
+    "OnlineOnly": "true"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/59815/byyu-bett-manosque",
@@ -662,7 +851,11 @@
     "Farbe": "Crème",
     "Kategorie": "Bett",
     "Grösse": "160x200",
-    "Produktart": "Holzbett"
+    "Produktart": "Holzbett",
+    "Preis": "670.90",
+    "Rating": "3.9",
+    "ReviewCount": "64",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/59943/edy-liv-bett-cadro",
@@ -680,7 +873,11 @@
     "Farbe": "Eiche",
     "Kategorie": "Bett",
     "Grösse": "180x200",
-    "Produktart": "Balkenbett"
+    "Produktart": "Balkenbett",
+    "Preis": "1710.90",
+    "Rating": "4.1",
+    "ReviewCount": "58",
+    "OnlineOnly": "true"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/61019/kare-design-bett-salamanca",
@@ -698,7 +895,11 @@
     "Farbe": "Beige",
     "Kategorie": "Bett",
     "Grösse": "180x200",
-    "Produktart": "Polsterbett"
+    "Produktart": "Polsterbett",
+    "Preis": "990.90",
+    "Rating": "4.0",
+    "ReviewCount": "35",
+    "OnlineOnly": "true"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/8451/edy-liv-bett-fonna",
@@ -716,7 +917,14 @@
     "Farbe": "",
     "Kategorie": "Bett",
     "Grösse": "180x200",
-    "Produktart": "Holzbett"
+    "Produktart": "Holzbett",
+    "Preis": "1680.90",
+    "AltPreis": "2240.00",
+    "Discount": "25",
+    "Rating": "4.5",
+    "ReviewCount": "62",
+    "OnlineOnly": "true",
+    "Badge": "Sale"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/8466/hasena-bett-oak-line-2",
@@ -734,7 +942,14 @@
     "Farbe": "",
     "Kategorie": "Bett",
     "Grösse": "160x200",
-    "Produktart": "Holzbett"
+    "Produktart": "Holzbett",
+    "Preis": "1700.90",
+    "AltPreis": "2620.00",
+    "Discount": "35",
+    "Rating": "4.8",
+    "ReviewCount": "54",
+    "OnlineOnly": "true",
+    "Badge": "Sale"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/8484/hasena-bett-modena",
@@ -752,7 +967,12 @@
     "Farbe": "",
     "Kategorie": "Bett",
     "Grösse": "180x200",
-    "Produktart": "Balkenbett"
+    "Produktart": "Balkenbett",
+    "Preis": "1430.90",
+    "Rating": "4.4",
+    "ReviewCount": "63",
+    "OnlineOnly": "true",
+    "Badge": "Neu"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/85260/novel-boxspringbett-lenno",
@@ -770,7 +990,11 @@
     "Farbe": "",
     "Kategorie": "Bett",
     "Grösse": "180x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "3340.90",
+    "Rating": "4.8",
+    "ReviewCount": "61",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/85273/byyu-boxspringbett-adriana-202",
@@ -788,7 +1012,11 @@
     "Farbe": "Grau",
     "Kategorie": "Bett",
     "Grösse": "160x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "3820.90",
+    "Rating": "4.6",
+    "ReviewCount": "16",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/85373/novel-boxspringbett-massello",
@@ -806,7 +1034,11 @@
     "Farbe": "",
     "Kategorie": "Bett",
     "Grösse": "180x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "3450.90",
+    "Rating": "4.1",
+    "ReviewCount": "27",
+    "OnlineOnly": "true"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/86592/mid-you-boxspringbett-antonio",
@@ -824,7 +1056,11 @@
     "Farbe": "Grau",
     "Kategorie": "Bett",
     "Grösse": "160x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "4410.90",
+    "Rating": "4.0",
+    "ReviewCount": "30",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/86595/mid-you-boxspringbett-carolina",
@@ -842,7 +1078,11 @@
     "Farbe": "Grau",
     "Kategorie": "Bett",
     "Grösse": "140x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "3950.90",
+    "Rating": "4.9",
+    "ReviewCount": "61",
+    "OnlineOnly": "true"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/86607/mid-you-boxspringbett-anton",
@@ -860,7 +1100,11 @@
     "Farbe": "Sand",
     "Kategorie": "Bett",
     "Grösse": "140x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "2070.90",
+    "Rating": "4.1",
+    "ReviewCount": "30",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/86619/welnova-boxspringbett-eve",
@@ -878,7 +1122,11 @@
     "Farbe": "Beige",
     "Kategorie": "Bett",
     "Grösse": "90x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "2000.90",
+    "Rating": "3.9",
+    "ReviewCount": "52",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/8788/edy-liv-bett-belle",
@@ -896,7 +1144,11 @@
     "Farbe": "",
     "Kategorie": "Bett",
     "Grösse": "90x200",
-    "Produktart": "Einzelbett"
+    "Produktart": "Einzelbett",
+    "Preis": "780.90",
+    "Rating": "4.9",
+    "ReviewCount": "29",
+    "OnlineOnly": "true"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/92688/boxspringbett-marshal-pino",
@@ -914,7 +1166,14 @@
     "Farbe": "Beige",
     "Kategorie": "Bett",
     "Grösse": "140x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "2440.90",
+    "AltPreis": "4070.00",
+    "Discount": "40",
+    "Rating": "4.8",
+    "ReviewCount": "45",
+    "OnlineOnly": "",
+    "Badge": "Sale"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/93007/livetastic-boxspringbett-lorie",
@@ -932,7 +1191,11 @@
     "Farbe": "Grau",
     "Kategorie": "Bett",
     "Grösse": "180x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "2750.90",
+    "Rating": "4.4",
+    "ReviewCount": "13",
+    "OnlineOnly": "true"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/93030/mid-you-boxspringbett-gusto",
@@ -950,7 +1213,11 @@
     "Farbe": "Hellgrau",
     "Kategorie": "Bett",
     "Grösse": "140x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "2410.90",
+    "Rating": "4.2",
+    "ReviewCount": "42",
+    "OnlineOnly": "true"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/93055/welnova-boxspringbett-atlanta",
@@ -968,7 +1235,14 @@
     "Farbe": "Braun",
     "Kategorie": "Bett",
     "Grösse": "180x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "3510.90",
+    "AltPreis": "4390.00",
+    "Discount": "20",
+    "Rating": "4.1",
+    "ReviewCount": "75",
+    "OnlineOnly": "true",
+    "Badge": "Sale"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/93742/byyu-boxspringbett-verona",
@@ -986,7 +1260,14 @@
     "Farbe": "Anthrazit",
     "Kategorie": "Bett",
     "Grösse": "120x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "4190.90",
+    "AltPreis": "6980.00",
+    "Discount": "40",
+    "Rating": "3.8",
+    "ReviewCount": "61",
+    "OnlineOnly": "",
+    "Badge": "Sale"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/94404/livetastic-boxspringbett-lorie",
@@ -1004,7 +1285,11 @@
     "Farbe": "Taupe",
     "Kategorie": "Bett",
     "Grösse": "160x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "3850.90",
+    "Rating": "4.2",
+    "ReviewCount": "8",
+    "OnlineOnly": "true"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/94458/byyu-boxspringbett-cool",
@@ -1022,7 +1307,12 @@
     "Farbe": "Anthrazit",
     "Kategorie": "Bett",
     "Grösse": "140x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "2500.90",
+    "Rating": "5.0",
+    "ReviewCount": "54",
+    "OnlineOnly": "",
+    "Badge": "Neu"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/94459/byyu-boxspringbett-fun",
@@ -1040,7 +1330,11 @@
     "Farbe": "Beige",
     "Kategorie": "Bett",
     "Grösse": "90x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "2840.90",
+    "Rating": "4.4",
+    "ReviewCount": "59",
+    "OnlineOnly": "true"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/94659/byyu-boxspringbett-cooper-202",
@@ -1057,7 +1351,14 @@
     "Holzqualitaet": "Spanplatte, furniert",
     "Farbe": "Taupe",
     "Kategorie": "Bett",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "4760.90",
+    "AltPreis": "5950.00",
+    "Discount": "20",
+    "Rating": "3.8",
+    "ReviewCount": "60",
+    "OnlineOnly": "",
+    "Badge": "Sale"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/94699/livetastic-boxspringbett-orlando",
@@ -1075,7 +1376,14 @@
     "Farbe": "Beige",
     "Kategorie": "Bett",
     "Grösse": "200x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "2950.90",
+    "AltPreis": "3690.00",
+    "Discount": "20",
+    "Rating": "4.2",
+    "ReviewCount": "38",
+    "OnlineOnly": "",
+    "Badge": "Sale"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/94729/livetastic-boxspringbett-pedro",
@@ -1093,7 +1401,11 @@
     "Farbe": "Anthrazit",
     "Kategorie": "Bett",
     "Grösse": "180x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "2310.90",
+    "Rating": "4.8",
+    "ReviewCount": "73",
+    "OnlineOnly": "true"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/94784/livetastic-boxspringbett-magnum",
@@ -1110,7 +1422,11 @@
     "Holzqualitaet": "",
     "Farbe": "Anthrazit",
     "Kategorie": "Bett",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "2650.90",
+    "Rating": "4.2",
+    "ReviewCount": "43",
+    "OnlineOnly": "true"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/94848/welnova-boxspringbett-fustic",
@@ -1128,7 +1444,11 @@
     "Farbe": "Rosa",
     "Kategorie": "Bett",
     "Grösse": "140x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "3310.90",
+    "Rating": "4.1",
+    "ReviewCount": "45",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/95413/jensen-boxspringbett-first",
@@ -1146,7 +1466,11 @@
     "Farbe": "Beige",
     "Kategorie": "Bett",
     "Grösse": "160x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "4300.90",
+    "Rating": "4.2",
+    "ReviewCount": "43",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/95904/mid-you-boxspringbett-liam",
@@ -1164,7 +1488,14 @@
     "Farbe": "Sand",
     "Kategorie": "Bett",
     "Grösse": "180x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "3800.90",
+    "AltPreis": "6330.00",
+    "Discount": "40",
+    "Rating": "4.4",
+    "ReviewCount": "67",
+    "OnlineOnly": "",
+    "Badge": "Sale"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/95924/welnova-boxspringbett-almeria",
@@ -1182,7 +1513,11 @@
     "Farbe": "Braun",
     "Kategorie": "Bett",
     "Grösse": "160x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "2320.90",
+    "Rating": "3.9",
+    "ReviewCount": "32",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/96000/esposa-boxspringbett-lincoln",
@@ -1200,7 +1535,11 @@
     "Farbe": "Hellgrau",
     "Kategorie": "Bett",
     "Grösse": "180x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "1880.90",
+    "Rating": "4.6",
+    "ReviewCount": "28",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/96026/mid-you-boxspringbett-castel-k",
@@ -1218,7 +1557,11 @@
     "Farbe": "Grau",
     "Kategorie": "Bett",
     "Grösse": "180x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "2990.90",
+    "Rating": "3.9",
+    "ReviewCount": "85",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/96038/welnova-boxspringbett-loreno",
@@ -1236,7 +1579,11 @@
     "Farbe": "Beige",
     "Kategorie": "Bett",
     "Grösse": "180x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "1590.90",
+    "Rating": "4.3",
+    "ReviewCount": "62",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/96129/edition-boxspringbett-minerva",
@@ -1254,7 +1601,11 @@
     "Farbe": "Beige",
     "Kategorie": "Bett",
     "Grösse": "180x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "1650.90",
+    "Rating": "5.0",
+    "ReviewCount": "6",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/96284/one-boxspringbett-rueegg",
@@ -1272,7 +1623,11 @@
     "Farbe": "Blau",
     "Kategorie": "Bett",
     "Grösse": "140x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "1890.90",
+    "Rating": "4.1",
+    "ReviewCount": "69",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/97123/byyu-boxspringbett-swift",
@@ -1290,7 +1645,11 @@
     "Farbe": "Dunkelgrau",
     "Kategorie": "Bett",
     "Grösse": "140x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "4280.90",
+    "Rating": "4.4",
+    "ReviewCount": "58",
+    "OnlineOnly": "true"
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/97728/jensen-boxspringbett-ambassador-continental",
@@ -1308,7 +1667,11 @@
     "Farbe": "Beige",
     "Kategorie": "Bett",
     "Grösse": "160x200",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "2620.90",
+    "Rating": "4.7",
+    "ReviewCount": "86",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/98063/bico-basics-boxspringbett-calla",
@@ -1325,7 +1688,11 @@
     "Holzqualitaet": "",
     "Farbe": "Braun",
     "Kategorie": "Bett",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "2140.90",
+    "Rating": "4.5",
+    "ReviewCount": "17",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/98143/bico-basics-boxspringbett-calla",
@@ -1342,7 +1709,11 @@
     "Holzqualitaet": "",
     "Farbe": "Dunkelgrau",
     "Kategorie": "Bett",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "4490.90",
+    "Rating": "5.0",
+    "ReviewCount": "25",
+    "OnlineOnly": ""
   },
   {
     "ProduktURL": "https://www.pfister.ch/de/produkt/98165/bico-basics-boxspringbett-calla",
@@ -1359,6 +1730,13 @@
     "Holzqualitaet": "",
     "Farbe": "Dunkelgrau",
     "Kategorie": "Bett",
-    "Produktart": "Boxspringbett"
+    "Produktart": "Boxspringbett",
+    "Preis": "2070.90",
+    "AltPreis": "2760.00",
+    "Discount": "25",
+    "Rating": "4.8",
+    "ReviewCount": "62",
+    "OnlineOnly": "",
+    "Badge": "Sale"
   }
 ]
