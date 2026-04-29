@@ -47,10 +47,22 @@
 
   async function loadAutoData() {
     try {
-      const res = await fetch('../../../data/produkte.json', { cache: 'no-store' });
-      if (!res.ok) return null;
+      const url = resolveFromScript('data/produkte.json');
+      const res = await fetch(url, { cache: 'no-store' });
+      if (!res.ok) {
+        console.warn('[pfister] data/produkte.json nicht erreichbar:', res.status, url);
+        return null;
+      }
       return await res.json();
-    } catch (e) { return null; }
+    } catch (e) {
+      console.warn('[pfister] Fetch fehlgeschlagen:', e);
+      return null;
+    }
+  }
+  function resolveFromScript(rel) {
+    const s = document.querySelector('script[src*="filter.js"]');
+    if (!s) return rel;
+    return new URL('../' + rel, s.src).href;
   }
 
   /* -------------------- UI-Gerüst -------------------- */

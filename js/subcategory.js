@@ -75,22 +75,25 @@
         if (parsed.length) return parsed;
       }
     } catch (e) {}
-    /* 2. Repo-committed JSON. */
+    /* 2. Repo-committed JSON via script-relative URL (immer korrekt,
+          unabhängig von der Verzeichnistiefe der aktuellen Seite). */
     try {
-      const res = await fetch(UPLOAD_PATH + '../../../data/produkte.json', { cache: 'no-store' });
-      if (!res.ok) return [];
+      const url = resolveFromScript('data/produkte.json');
+      const res = await fetch(url, { cache: 'no-store' });
+      if (!res.ok) {
+        console.warn('[pfister] data/produkte.json nicht erreichbar:', res.status, url);
+        return [];
+      }
       return await res.json();
     } catch (e) {
-      try {
-        /* Fallback mit anderer relativer Tiefe. */
-        const res = await fetch(resolveFromScript('data/produkte.json'));
-        if (!res.ok) return [];
-        return await res.json();
-      } catch (_) { return []; }
+      console.warn('[pfister] Fetch fehlgeschlagen:', e);
+      return [];
     }
   }
 
   function resolveFromScript(rel) {
+    /* Findet die absolute URL zu /<repo-root>/<rel> ausgehend von
+       js/subcategory.js — robust für jede Verzeichnistiefe. */
     const s = document.querySelector('script[src*="subcategory.js"]');
     if (!s) return rel;
     return new URL('../' + rel, s.src).href;
